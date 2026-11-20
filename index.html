@@ -3,91 +3,633 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>AI Sanely – AI news and tips in plain English</title>
-<meta name="description" content="Verified AI news, tips and how-tos for everyday people. Every post comes with its source and date.">
-<link rel="canonical" href="https://aisanely.com/">
+<title>AI Sanely: AI in plain English</title>
+<meta name="description" content="AI news in plain English: short, clear and always with a source and a date. Tips, how-tos and games for kids, parents and grandparents.">
+<meta property="og:title" content="AI Sanely: AI in plain English">
+<meta property="og:description" content="Artificial intelligence, explained sanely. News with a source and a date, tips, how-tos and games.">
 <meta property="og:type" content="website">
-<meta property="og:title" content="AI Sanely – AI news and tips in plain English">
-<meta property="og:description" content="Verified AI news, tips and how-tos for everyday people. Every post comes with its source and date.">
 <meta property="og:url" content="https://aisanely.com/">
-<meta name="theme-color" content="#17153B">
-<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta property="og:image" content="https://aisanely.com/assets/og/index.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="AI Sanely: artificial intelligence, explained sanely. Mascot Ludko.">
+<meta property="og:site_name" content="AI Sanely">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="manifest" href="assets/site.webmanifest">
 <link rel="stylesheet" href="assets/fonts/fonts.css">
-<link rel="stylesheet" href="style.css">
+<style>
+body{margin:0;background:#FFFFFF}
+a{color:#17153B}a:hover{color:#3A3770}
+@keyframes ludkoFloat{0%,100%{transform:translateY(0) rotate(-1.5deg)}50%{transform:translateY(-14px) rotate(1.5deg)}}
+.ludko-float{animation:ludkoFloat 4.5s ease-in-out infinite}
+.ludko-float:focus-visible{outline:3px solid #17153B;outline-offset:10px;border-radius:32px}
+.ludko-svg{transition:transform .2s ease}
+.ludko-float:hover .ludko-svg{transform:scale(1.03)}
+.ludko-float:active .ludko-svg{transform:scale(.96)}
+@keyframes ludkoWave{0%,100%{transform:rotate(-8deg)}50%{transform:rotate(14deg)}}
+.ludko-arm{transform-box:fill-box;transform-origin:0% 100%;animation:ludkoWave 1.4s ease-in-out infinite}
+@keyframes ludkoBlink{0%,90%,100%{transform:scaleY(1)}94%{transform:scaleY(.08)}}
+.ludko-eye{transform-box:fill-box;transform-origin:center;animation:ludkoBlink 4.8s infinite}
+.ludko-eye2{animation-delay:.04s}
+@keyframes ludkoDot{0%,100%{transform:scale(1)}50%{transform:scale(1.35)}}
+.ludko-dot{transform-box:fill-box;transform-origin:center;animation:ludkoDot 1.8s ease-in-out infinite}
+.d2{animation-delay:.3s}.d3{animation-delay:.6s}
+@keyframes popA{0%{transform:scale(.4);opacity:0}70%{transform:scale(1.1);opacity:1}100%{transform:scale(1);opacity:1}}
+@keyframes popB{0%{transform:scale(.4);opacity:0}70%{transform:scale(1.1);opacity:1}100%{transform:scale(1);opacity:1}}
+.pop-a{animation:popA .5s cubic-bezier(.2,.9,.3,1.3) both;transform-origin:bottom left}
+.pop-b{animation:popB .5s cubic-bezier(.2,.9,.3,1.3) both;transform-origin:bottom left}
+.badge-a{transform-box:fill-box;transform-origin:center;animation:popA .5s cubic-bezier(.2,.9,.3,1.3) both}
+.badge-b{transform-box:fill-box;transform-origin:center;animation:popB .5s cubic-bezier(.2,.9,.3,1.3) both}
+@keyframes logoDot{0%,60%,100%{transform:translateY(0)}30%{transform:translateY(-5px)}}
+.logo-dot{animation:logoDot 2.4s ease-in-out infinite}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+.hero-in{animation:fadeUp .8s ease-out both}
+.hero-in2{animation:fadeUp .8s ease-out .15s both}
+.hero-in3{animation:fadeUp .8s ease-out .3s both}
+.lift{transition:transform .2s ease, box-shadow .2s ease}
+.lift:hover{transform:translateY(-6px);box-shadow:0 12px 0 -4px #17153B}
+.quiz-btn{transition:transform .15s ease}
+.quiz-btn:hover{transform:translateY(-3px)}
+.quiz-btn:focus-visible,.cta:focus-visible{outline:3px solid #17153B;outline-offset:3px}
+.big{zoom:1.15;width:86.9565%!important}
+.burger-big:focus-visible{outline:3px solid #17153B;outline-offset:3px}
+.burger{display:none}
+.burger:focus-visible{outline:3px solid #17153B;outline-offset:3px}
+@keyframes menuIn{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
+@media (max-width: 720px){
+.sec{padding-top:56px!important;padding-bottom:56px!important;gap:28px!important}
+.hdr-row{padding-top:12px!important;padding-bottom:12px!important}
+.nav{display:none!important;order:3;width:100%;flex-direction:column;gap:0!important;border-top:1px solid #E6E5F0}
+.nav.open{display:flex!important;animation:menuIn .2s ease-out}
+.nav a{padding:16px 4px!important;font-size:18px!important;border-bottom:1px solid #F0EFF7}
+.nav a:last-child{border-bottom:none}
+.burger{display:inline-flex}
+.hdr-cta-txt{display:none}
+.hdr-cta{padding:0!important;width:44px;justify-content:center}
+.hero-lead{font-size:18px!important}
+.ludko-btn{width:240px!important}
+.tile{min-height:0!important;padding:24px!important}
+.tile-title{font-size:24px!important}
+.card{padding:24px!important}
+.quiz-card{padding:22px!important;box-shadow:6px 6px 0 #17153B!important;border-radius:22px!important}
+.quiz-q{font-size:21px!important}
+.tz-item{padding:18px!important;gap:14px!important}
+.cta-card{padding:32px 24px!important;border-radius:24px!important}
+.big-btn{width:100%}
+}
+@media (prefers-reduced-motion: reduce){.ludko-float,.ludko-arm,.ludko-eye,.ludko-dot,.pop-a,.pop-b,.badge-a,.badge-b,.logo-dot,.hero-in,.hero-in2,.hero-in3{animation:none}.lift,.ludko-svg,.quiz-btn{transition:none}}
+</style>
+<style>[v-cloak]{display:none}</style>
+<style>
+.pk-sec{padding:88px 0}
+.pk-tint{background:#F6F5FB}
+.pk-wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+.pk-split{display:grid;gap:40px;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);align-items:center}
+@media (max-width:900px){.pk-split{grid-template-columns:1fr}.pk-sec{padding:56px 0}}
+.pk-side{display:flex;flex-direction:column;gap:16px}
+.pk-kick{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:#4A4775}
+.pk-h2{margin:0;font-size:clamp(30px,4vw,44px);font-weight:800;letter-spacing:-.01em;line-height:1.1}
+.pk-p{margin:0;font-size:18px;line-height:1.6;color:#36335E}
+.pk-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:6px}
+.pk-btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 26px;border-radius:999px;border:2px solid #17153B;background:#fff;color:#17153B;text-decoration:none;font-weight:700;font-size:17px;box-sizing:border-box;transition:transform .15s}
+.pk-btn.dark{background:#17153B;color:#fff}
+.pk-btn:hover{transform:translateY(-2px)}
+.pk-grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));margin-top:28px}
+.pk-tile{display:flex;flex-direction:column;gap:10px;padding:28px;border-radius:24px;background:var(--c);border:2px solid #17153B;text-decoration:none;color:#17153B;transition:transform .2s ease,box-shadow .2s ease}
+.pk-tile:hover{transform:translate(-4px,-4px);box-shadow:8px 8px 0 #17153B}
+.pk-tile .pk-e{font-size:40px;line-height:1}
+.pk-tile b{font-size:22px;font-weight:800}
+.pk-tile span{font-size:16px;line-height:1.55;color:#36335E}
+.pk-doors{padding-top:56px;padding-bottom:56px}
+.pk-doors .pk-grid{margin-top:18px}
+.pk-more{margin:24px 0 0;font-size:17px;font-weight:600;color:#36335E}
+.pk-more a{color:#17153B;font-weight:800}
+.beta-bar{background:#C62828;color:#FFFFFF;text-align:center;font:600 13px/1.4 Montserrat,system-ui,sans-serif;padding:6px 16px}
+@media (max-width:640px){.ludko-btn{width:220px!important}}
+.pk-tile i{font-style:normal;font-weight:800;margin-top:auto;padding-top:6px}
+</style>
+<script src="assets/stats.js"></script>
 </head>
 <body>
-<a class="skip" href="#main">Skip to content</a>
-<header class="top">
-  <div class="wrap">
-    <a class="logo" href="/" aria-label="AI Sanely home"><span class="d" aria-hidden="true"><i style="background:#FF5F57"></i><i style="background:#FEBC2E"></i><i style="background:#28C840"></i></span>AI Sanely</a>
-    <div class="tools"><a class="round dark" href="https://www.instagram.com/aisanely/" rel="me">@aisanely</a></div>
-  </div>
+<div class="beta-bar" role="note">This site is in beta. We are still working on it.</div>
+<div id="app" v-cloak>
+<div :class="rootClass" style="font-family: Montserrat, system-ui, sans-serif; color: #17153B; background: #FFFFFF; width: 100%; box-sizing: border-box; overflow-x: clip">
+
+<!-- Header -->
+<header style="border-bottom: 1px solid #E6E5F0; background: #FFFFFF">
+<div class="hdr-row" style="max-width: 1180px; margin: 0 auto; padding: 18px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px">
+<a href="#top" style="display: flex; align-items: center; gap: 12px; text-decoration: none">
+<span style="display: flex; gap: 6px" aria-hidden="true">
+<span class="logo-dot" style="width: 12px; height: 12px; border-radius: 50%; background: #FF5F57"></span>
+<span class="logo-dot d2" style="width: 12px; height: 12px; border-radius: 50%; background: #FEBC2E"></span>
+<span class="logo-dot d3" style="width: 12px; height: 12px; border-radius: 50%; background: #28C840"></span>
+</span>
+<span style="font-weight: 800; font-size: 20px; color: #17153B">AI Sanely</span>
+</a>
+<nav id="menu" :class="`nav ${menuClass}`" aria-label="Main navigation" style="display: flex; flex-wrap: wrap; gap: 4px 22px; font-weight: 600; font-size: 15px">
+<a href="news/" style="text-decoration: none; padding: 12px 0">News</a>
+<a href="start.html" style="text-decoration: none; padding: 12px 0">Start here</a>
+<a href="games.html" style="text-decoration: none; padding: 12px 0">Games</a>
+<a href="schools.html" style="text-decoration: none; padding: 12px 0">For schools</a>
+<a href="parents.html" style="text-decoration: none; padding: 12px 0">For parents</a>
+<a href="#free" @click="closeMenu" style="text-decoration: none; padding: 12px 0">Free PDFs</a>
+</nav>
+<div style="display: flex; align-items: center; gap: 10px">
+<button type="button" class="burger-big" @click="toggleBig" :aria-pressed="bigPressed" aria-label="Larger text" :style="`min-width: 44px; height: 44px; padding: 0 12px; border: 2px solid #17153B; border-radius: 999px; background: ${bigBg}; color: #17153B; font-family: inherit; font-weight: 800; font-size: 15px; cursor: pointer`">{{bigLabel}}</button>
+<a class="cta hdr-cta" href="https://www.instagram.com/aisanely/" aria-label="Follow @aisanely on Instagram" style="display: inline-flex; align-items: center; gap: 10px; background: #17153B; color: #FFFFFF; text-decoration: none; font-weight: 700; font-size: 15px; padding: 12px 20px; border-radius: 999px; min-height: 44px; box-sizing: border-box">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="0.6"></circle></svg>
+<span class="hdr-cta-txt">Follow @aisanely</span>
+</a>
+<button type="button" class="burger" @click="toggleMenu" aria-controls="menu" :aria-expanded="menuExpanded" :aria-label="menuLabel" style="width: 44px; height: 44px; align-items: center; justify-content: center; border: 2px solid #17153B; border-radius: 999px; background: #FFFFFF; color: #17153B; cursor: pointer; padding: 0">
+<template v-if="menuOpen">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><line x1="6" y1="6" x2="18" y2="18"></line><line x1="18" y1="6" x2="6" y2="18"></line></svg>
+</template>
+<template v-if="menuClosed">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><line x1="4" y1="7" x2="20" y2="7"></line><line x1="4" y1="12" x2="20" y2="12"></line><line x1="4" y1="17" x2="20" y2="17"></line></svg>
+</template>
+</button>
+</div>
+</div>
 </header>
 
-<main id="main">
-  <section class="hero" aria-labelledby="hero-title">
-    <div class="wrap">
-      <div class="txt">
-        <p class="kicker">&gt; AI in plain English</p>
-        <h1 id="hero-title">AI news you can check.</h1>
-        <p class="lead">Short posts about new AI tools, models and rules, written for people who don't work in tech. Every news post shows its source and the date we checked it.</p>
-        <div class="btns">
-          <a class="btn yel" href="https://www.instagram.com/aisanely/">Follow @aisanely</a>
-          <a class="btn" href="#free">Free prompts PDF</a>
-        </div>
-      </div>
-      <div class="art" aria-hidden="true">
-        <div class="chat">
-          <div class="bar"><span class="d"><i style="background:#FF5F57"></i><i style="background:#FEBC2E"></i><i style="background:#28C840"></i></span>~/aisanely</div>
-          <div class="body">
-            <p class="bubble q">What changed in AI this week, and does it matter to me?</p>
-            <p class="bubble a">Here's what changed, what it means for you, and the source.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+<!-- Hero -->
+<section id="top" style="background: #F6F5FB">
+<div class="sec" style="max-width: 1180px; margin: 0 auto; padding: 80px 24px 88px; display: flex; flex-wrap: wrap; align-items: center; gap: 48px">
+<div style="flex: 999 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 24px">
+<span class="hero-in" style="font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 14px; letter-spacing: 0.08em; text-transform: uppercase; color: #4A4775">AI in plain English</span>
+<h1 class="hero-in2" style="margin: 0; font-size: clamp(40px, 6vw, 68px); line-height: 1.05; font-weight: 800; letter-spacing: -0.02em">Artificial intelligence, explained sanely.</h1>
+<p class="hero-in3 hero-lead" style="margin: 0; font-size: 20px; line-height: 1.55; max-width: 560px; color: #36335E">Verified AI news, tips and how-tos. Short, clear, with a source and a date. You learn what changed and how you can use it.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px">
+<a class="cta" href="https://www.instagram.com/aisanely/" style="display: inline-flex; align-items: center; justify-content: center; background: #17153B; color: #FFFFFF; text-decoration: none; font-weight: 700; font-size: 17px; padding: 16px 28px; border-radius: 999px; min-height: 44px; box-sizing: border-box">Follow on Instagram</a>
+<a class="cta" href="#free" style="display: inline-flex; align-items: center; justify-content: center; background: #FFFFFF; color: #17153B; text-decoration: none; font-weight: 700; font-size: 17px; padding: 16px 28px; border-radius: 999px; border: 2px solid #17153B; min-height: 44px; box-sizing: border-box">Get free PDFs</a>
+</div>
+</div>
 
-  <section class="sec" aria-labelledby="kinds-title">
-    <div class="wrap">
-      <h2 id="kinds-title">Three kinds of posts</h2>
-      <p class="lead">The colors on our feed tell you what you're looking at.</p>
-      <ul class="grid" style="list-style:none;margin:0;padding:0">
-        <li class="card kind news"><h3>News</h3><p>What changed, why it matters to you, and where it comes from. Always with a source and a date.</p></li>
-        <li class="card kind tips"><h3>Tips</h3><p>One prompt you can copy today. It works in ChatGPT, Claude, Gemini and Copilot.</p></li>
-        <li class="card kind howto"><h3>How-tos</h3><p>A single feature, explained in a minute: where to find it and when it helps.</p></li>
-      </ul>
-    </div>
-  </section>
+<!-- Ludko -->
+<div style="flex: 1 1 340px; display: flex; flex-direction: column; align-items: center; gap: 8px">
+<div :class="bubbleClass" aria-live="polite" :style="`align-self: center; max-width: 320px; background: ${bubbleColor}; border: 3px solid #17153B; border-radius: 18px 18px 18px 4px; padding: 12px 20px; font-weight: 800; font-size: 19px; line-height: 1.3; box-sizing: border-box`">{{line}}</div>
+<button type="button" class="ludko-float ludko-btn" @click="nextLine" :ref="ludkoRef" aria-label="Mascot Ludko: click and he tells you something new" style="background: none; border: none; padding: 0; margin: 0; cursor: pointer; display: block; width: 340px; max-width: 100%">
+<svg class="ludko-svg" viewBox="0 0 300 250" width="100%" aria-hidden="true" style="display: block; overflow: visible">
+<path d="M76 168 Q48 176 46 214" stroke="#A29BFE" stroke-width="11" fill="none" stroke-linecap="round"></path>
+<path class="ludko-arm" d="M226 156 Q252 128 246 86" stroke="#A29BFE" stroke-width="11" fill="none" stroke-linecap="round"></path>
+<rect x="70" y="70" width="160" height="146" rx="30" fill="#A29BFE"></rect>
+<rect x="70" y="108" width="160" height="108" rx="30" fill="#FFFFFF"></rect>
+<rect x="70" y="108" width="160" height="40" fill="#FFFFFF"></rect>
+<circle class="ludko-dot" cx="97" cy="89" r="6.5" fill="#FF5F57"></circle>
+<circle class="ludko-dot d2" cx="117" cy="89" r="6.5" fill="#FEBC2E"></circle>
+<circle class="ludko-dot d3" cx="137" cy="89" r="6.5" fill="#28C840"></circle>
+<ellipse cx="114" cy="174" rx="9" ry="4.5" fill="#FFB8B8" :opacity="face.cheeks"></ellipse>
+<ellipse cx="186" cy="174" rx="9" ry="4.5" fill="#FFB8B8" :opacity="face.cheeks"></ellipse>
+<g class="ludko-eye">
+<ellipse cx="128" cy="152" rx="9.5" ry="12" fill="#17153B"></ellipse>
+<circle cx="130" cy="147" r="3.4" fill="#FFFFFF" :transform="hl"></circle>
+</g>
+<g class="ludko-eye ludko-eye2">
+<ellipse cx="172" cy="152" rx="9.5" ry="12" fill="#17153B"></ellipse>
+<circle cx="174" cy="147" r="3.4" fill="#FFFFFF" :transform="hl"></circle>
+</g>
+<line x1="164" y1="131" x2="184" y2="126" stroke="#17153B" stroke-width="5" stroke-linecap="round" :opacity="face.brow"></line>
+<path d="M136 176 Q150 190 164 176" stroke="#17153B" stroke-width="5" fill="none" stroke-linecap="round" :opacity="face.smile"></path>
+<ellipse cx="150" cy="182" rx="6" ry="7" fill="#17153B" :opacity="face.o"></ellipse>
+<line x1="139" y1="186" x2="160" y2="181" stroke="#17153B" stroke-width="5" stroke-linecap="round" :opacity="face.flat"></line>
+<g :class="badgeClass">
+<path d="M236 60 q9 -10 18 0 q9 10 18 0" stroke="#A29BFE" stroke-width="5" fill="none" stroke-linecap="round" :opacity="face.bWave"></path>
+<g :opacity="face.bPozor"><circle cx="258" cy="60" r="22" fill="#FF5F57"></circle><line x1="258" y1="48" x2="258" y2="62" stroke="#17153B" stroke-width="6" stroke-linecap="round"></line><circle cx="258" cy="72" r="3.6" fill="#17153B"></circle></g>
+<g :opacity="face.bHmm"><circle cx="258" cy="60" r="22" fill="#A29BFE"></circle><text x="258" y="70" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="28" font-weight="800" fill="#17153B">?</text></g>
+<g :opacity="face.bOk"><circle cx="258" cy="60" r="22" fill="#28C840"></circle><path d="M247 60 l8 8 l14 -15" stroke="#17153B" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></g>
+<g :opacity="face.bNove"><rect x="222" y="44" width="72" height="30" rx="15" fill="#FF5F57"></rect><text x="258" y="65" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="15" font-weight="800" fill="#17153B">NEW</text></g>
+<g :opacity="face.bTip"><line x1="258" y1="26" x2="258" y2="34" stroke="#FEBC2E" stroke-width="4" stroke-linecap="round"></line><line x1="236" y1="40" x2="242" y2="45" stroke="#FEBC2E" stroke-width="4" stroke-linecap="round"></line><line x1="280" y1="40" x2="274" y2="45" stroke="#FEBC2E" stroke-width="4" stroke-linecap="round"></line><circle cx="258" cy="56" r="15" fill="#FEBC2E"></circle><rect x="251" y="70" width="14" height="8" rx="2" fill="#FFFFFF" stroke="#17153B" stroke-width="2"></rect></g>
+</g>
+</svg>
+</button>
+<span style="font-size: 14px; color: #4A4775; font-weight: 600">Click on Ludko</span>
+</div>
+</div>
+</section>
 
-  <section class="sec tint" aria-labelledby="verify-title">
-    <div class="wrap">
-      <h2 id="verify-title">How we verify</h2>
-      <ol class="steps">
-        <li><span><strong>We go to the original.</strong> The company's own announcement, the official documentation, the study or the law. Not a repost.</span></li>
-        <li><span><strong>We check the date.</strong> AI moves fast, so every news post says when we last confirmed it.</span></li>
-        <li><span><strong>We name the source.</strong> It's on the slide and in the caption, so you can check it yourself.</span></li>
-        <li><span><strong>We fix mistakes in public.</strong> If we get something wrong, we post a correction with the date and what changed.</span></li>
-      </ol>
-      <p class="note">No hype and no scare stories. If something is uncertain, we say so.</p>
-    </div>
-  </section>
+<!-- Where to start -->
+<section class="pk-sec pk-tint pk-doors" v-pre>
+<div class="pk-wrap">
+<span class="pk-kick">Where do you want to start?</span>
+<div class="pk-grid">
+<a class="pk-tile" href="start.html" style="--c:#C9F2D2"><span class="pk-e" aria-hidden="true">🌱</span><b>I'm new to AI</b><span>A calm start: 7 small steps, first questions to copy and a jargon-free glossary.</span><i>Start here →</i></a>
+<a class="pk-tile" href="parents.html" style="--c:#FFF3CF"><span class="pk-e" aria-hidden="true">👨‍👩‍👧</span><b>I have kids</b><span>How to talk with kids about AI, what to allow and games that show how AI works.</span><i>For parents →</i></a>
+<a class="pk-tile" href="schools.html" style="--c:#EEECFF"><span class="pk-e" aria-hidden="true">🏫</span><b>I teach</b><span>45-minute lessons by age group and games for the projector. No sign-up.</span><i>For schools →</i></a>
+</div>
+<p class="pk-more">Just want to play? <a href="games.html">12 games about AI for kids and adults →</a></p>
+</div>
+</section>
 
-  <section class="sec dark" id="free" aria-labelledby="free-title">
-    <div class="wrap">
-      <h2 id="free-title">20 everyday AI prompts, free</h2>
-      <p class="lead">Copy-ready prompts for email, planning, learning and more, in one PDF. Comment <span class="kw">PROMPTS</span> under any of our Instagram posts and we'll send it to your DMs.</p>
-      <a class="btn yel" href="https://www.instagram.com/aisanely/">Go to Instagram</a>
-    </div>
-  </section>
-</main>
 
-<footer class="foot">
-  <div class="wrap">
-    <a class="logo" href="/" style="color:#fff"><span class="d" aria-hidden="true"><i style="background:#FF5F57"></i><i style="background:#FEBC2E"></i><i style="background:#28C840"></i></span>AI Sanely</a>
-    <p style="margin:.8rem 0 0;line-height:1.6">AI news and tips in plain English. Verified, with source and date.</p>
-    <small>© 2026 AI Sanely · This site uses no cookies and no tracking.</small>
-  </div>
+
+<!-- Latest on Instagram -->
+<section id="najnovsie">
+<div class="sec" style="max-width: 1180px; margin: 0 auto; padding: 96px 24px; display: flex; flex-direction: column; gap: 32px">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 20px">
+<div style="display: flex; flex-direction: column; gap: 12px; max-width: 680px">
+<span style="font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 14px; letter-spacing: 0.08em; color: #4A4775">LATEST ON INSTAGRAM · {{triad.date}}</span>
+<h2 style="margin: 0; font-size: clamp(30px, 4vw, 44px); font-weight: 800; letter-spacing: -0.01em">Three at a time: news, a tip and a how-to</h2>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 8px 18px; font-size: 15px; font-weight: 600">
+<span style="display: inline-flex; align-items: center; gap: 8px"><span style="width: 14px; height: 14px; border-radius: 50%; background: #FF5F57"></span>News</span>
+<span style="display: inline-flex; align-items: center; gap: 8px"><span style="width: 14px; height: 14px; border-radius: 50%; background: #28C840"></span>AI tip</span>
+<span style="display: inline-flex; align-items: center; gap: 8px"><span style="width: 14px; height: 14px; border-radius: 50%; background: #FEBC2E"></span>How-to</span>
+</div>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 24px">
+<template v-for="(p, $index) in triad.posts">
+<a class="lift tile" :href="p.link" :style="`background: ${p.color}; border-radius: 24px; padding: 32px; display: flex; flex-direction: column; gap: 16px; text-decoration: none; color: #17153B; min-height: 400px; box-sizing: border-box`">
+<span style="font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 13px; letter-spacing: 0.08em">{{p.tag}}</span>
+<span class="tile-title" style="font-size: 28px; line-height: 1.15; font-weight: 800">{{p.title}}</span>
+<span style="font-size: 16px; line-height: 1.55">{{p.body}}</span>
+<template v-if="p.hasPrompt">
+<span style="font-family: 'JetBrains Mono', monospace; font-size: 14px; line-height: 1.55; background: #FFFFFF; border-radius: 12px; padding: 14px 16px">{{p.prompt}}</span>
+</template>
+<span style="margin-top: auto; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; font-size: 14px; font-weight: 600; padding-top: 16px; border-top: 2px solid #17153B">
+<span>{{p.meta}}</span>
+<span>See it →</span>
+</span>
+</a>
+</template>
+</div>
+<a href="news/" style="align-self: flex-start; font-weight: 800; font-size: 17px; color: #17153B; padding: 12px 0">All news →</a>
+</div>
+</section>
+
+<!-- Story -->
+<section id="pribeh" class="pk-sec" v-pre>
+<div class="pk-wrap pk-split">
+<div><div data-pribeh></div></div>
+<div class="pk-side">
+<span class="pk-kick">A 30-second story</span>
+<h2 class="pk-h2">Does AI give you a headache too?</h2>
+<p class="pk-p">A new "game-changing" model every day, "last chance" courses and headlines about who AI will replace. No wonder so many people feel anxious. Worries are normal. Panic does not help.</p>
+<p class="pk-p"><b>So we do it differently:</b> verified news, always with a source and a date. What changed, what it means for you and how you can use it. No scare stories.</p>
+<div class="pk-row"><a class="pk-btn dark" href="https://www.instagram.com/aisanely/">Follow @aisanely</a><a class="pk-btn" href="start.html">Start calmly →</a></div>
+</div>
+</div>
+</section>
+
+
+<!-- Week in AI -->
+<section id="week" style="background: #17153B; color: #FFFFFF">
+<div class="sec" style="max-width: 1180px; margin: 0 auto; padding: 96px 24px; display: flex; flex-wrap: wrap; gap: 48px">
+<div style="flex: 1 1 320px; display: flex; flex-direction: column; gap: 16px">
+<span style="font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 14px; letter-spacing: 0.08em; color: #FF8A84">EVERY SUNDAY</span>
+<h2 style="margin: 0; font-size: clamp(34px, 5vw, 56px); line-height: 1.05; font-weight: 800; color: #FFFFFF">The Week in AI</h2>
+<p style="margin: 0; font-size: 18px; line-height: 1.6; color: #D6D4EA">Five stories worth your time. Each in one sentence, with a source and a date.</p>
+<template v-if="tyzden.has">
+<span style="font-family: 'JetBrains Mono', monospace; font-size: 14px; color: #D6D4EA">{{tyzden.range}} · verified {{tyzden.verified}}</span>
+</template>
+</div>
+<div style="flex: 999 1 560px; min-width: 0">
+<template v-if="tyzden.has">
+<ol style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 12px">
+<template v-for="(n, $index) in tyzden.items">
+<li class="tz-item" style="display: flex; gap: 20px; align-items: flex-start; padding: 22px 24px; border: 2px solid #3A3770; border-radius: 20px">
+<span style="flex: none; width: 40px; height: 40px; border-radius: 50%; background: #FF5F57; color: #17153B; display: flex; align-items: center; justify-content: center; font-family: 'JetBrains Mono', monospace; font-weight: 700">{{n.num}}</span>
+<div style="display: flex; flex-direction: column; gap: 6px; min-width: 0">
+<strong style="font-size: 19px; color: #FFFFFF">{{n.h}}</strong>
+<span style="font-size: 16px; line-height: 1.55; color: #D6D4EA">{{n.t}}</span>
+<span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #B9B6DA">{{n.meta}}</span>
+</div>
+</li>
+</template>
+</ol>
+</template>
+<template v-if="tyzden.empty">
+<div style="border: 2px dashed #4A4775; border-radius: 24px; padding: 40px 32px; display: flex; flex-direction: column; gap: 14px">
+<strong style="font-size: 22px; color: #FFFFFF">The first edition is on its way</strong>
+<span style="font-size: 17px; line-height: 1.6; color: #D6D4EA">As soon as it is out on Instagram, it shows up here too: five stories with sources.</span>
+<a class="cta" href="https://www.instagram.com/aisanely/" style="align-self: flex-start; display: inline-flex; align-items: center; background: #FF5F57; color: #17153B; text-decoration: none; font-weight: 700; font-size: 16px; padding: 14px 24px; border-radius: 999px; min-height: 44px; box-sizing: border-box">Don't miss it on Instagram</a>
+</div>
+</template>
+</div>
+</div>
+</section>
+
+<!-- Quiz -->
+<section id="quiz" style="background: #EEECFF">
+<div class="sec" style="max-width: 1180px; margin: 0 auto; padding: 96px 24px; display: flex; flex-wrap: wrap; gap: 48px; align-items: flex-start">
+<div style="flex: 1 1 320px; display: flex; flex-direction: column; gap: 16px">
+<span style="font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 14px; letter-spacing: 0.08em; color: #4A4775">QUIZ · EVERY WEDNESDAY ON INSTAGRAM</span>
+<h2 style="margin: 0; font-size: clamp(34px, 5vw, 56px); line-height: 1.05; font-weight: 800">Myth or fact?</h2>
+<p style="margin: 0; font-size: 18px; line-height: 1.6; color: #36335E">Take a guess and see right away how it really is, with a source.</p>
+</div>
+<div class="quiz-card" style="flex: 999 1 560px; min-width: 0; background: #FFFFFF; border: 3px solid #17153B; border-radius: 28px; box-shadow: 10px 10px 0 #17153B; padding: 36px; display: flex; flex-direction: column; gap: 24px; box-sizing: border-box">
+<template v-if="quiz.playing">
+<div style="display: flex; flex-direction: column; gap: 24px">
+<span style="font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 14px; color: #4A4775">QUESTION {{quiz.num}} / {{quiz.total}}</span>
+<p class="quiz-q" style="margin: 0; font-size: 26px; line-height: 1.3; font-weight: 800">“{{quiz.q}}”</p>
+<template v-if="quiz.asking">
+<div style="display: flex; flex-wrap: wrap; gap: 16px">
+<button type="button" class="quiz-btn" @click="quiz.pickMytus" style="flex: 1 1 120px; min-height: 64px; border: 3px solid #17153B; border-radius: 18px; background: #FF5F57; color: #17153B; font-family: inherit; font-size: 20px; font-weight: 800; cursor: pointer">Myth</button>
+<button type="button" class="quiz-btn" @click="quiz.pickFakt" style="flex: 1 1 120px; min-height: 64px; border: 3px solid #17153B; border-radius: 18px; background: #28C840; color: #17153B; font-family: inherit; font-size: 20px; font-weight: 800; cursor: pointer">Fact</button>
+</div>
+</template>
+<template v-if="quiz.answered">
+<div :class="quiz.anim" aria-live="polite" :style="`background: ${quiz.verdictBg}; border-radius: 18px; padding: 24px; display: flex; flex-direction: column; gap: 10px`">
+<strong style="font-size: 22px">{{quiz.verdict}}</strong>
+<span style="font-size: 17px; line-height: 1.55">{{quiz.why}}</span>
+<span style="font-family: 'JetBrains Mono', monospace; font-size: 13px">Source: {{quiz.src}}</span>
+</div>
+<button type="button" class="quiz-btn" @click="quiz.next" style="align-self: flex-start; min-height: 52px; padding: 0 28px; border: none; border-radius: 999px; background: #17153B; color: #FFFFFF; font-family: inherit; font-size: 17px; font-weight: 700; cursor: pointer">{{quiz.nextLabel}}</button>
+</template>
+</div>
+</template>
+<template v-if="quiz.done">
+<div style="display: flex; flex-direction: column; gap: 18px">
+<span style="font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 14px; color: #4A4775">RESULT</span>
+<p style="margin: 0; font-size: 32px; font-weight: 800">{{quiz.score}} of {{quiz.total}} correct</p>
+<p style="margin: 0; font-size: 17px; line-height: 1.6; color: #36335E">{{quiz.scoreText}} New questions every Wednesday in our Instagram stories.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 12px">
+<button type="button" class="quiz-btn" @click="quiz.restart" style="min-height: 52px; padding: 0 28px; border: 2px solid #17153B; border-radius: 999px; background: #FFFFFF; color: #17153B; font-family: inherit; font-size: 17px; font-weight: 700; cursor: pointer">Try again</button>
+<a class="cta" href="https://www.instagram.com/aisanely/" style="display: inline-flex; align-items: center; min-height: 52px; padding: 0 28px; border-radius: 999px; background: #17153B; color: #FFFFFF; text-decoration: none; font-size: 17px; font-weight: 700; box-sizing: border-box">Follow @aisanely</a>
+</div>
+</div>
+</template>
+</div>
+</div>
+</section>
+
+<!-- Play and learn -->
+<section id="hry">
+<div class="sec" style="max-width: 1180px; margin: 0 auto; padding: 96px 24px; display: flex; flex-direction: column; gap: 32px">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 20px">
+<div style="display: flex; flex-direction: column; gap: 12px; max-width: 700px">
+<span style="font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 14px; letter-spacing: 0.08em; color: #4A4775">GAMES · NO SIGN-UP</span>
+<h2 style="margin: 0; font-size: clamp(30px, 4vw, 44px); font-weight: 800; letter-spacing: -0.01em">Play and learn</h2>
+<p style="margin: 0; font-size: 18px; line-height: 1.6; color: #36335E">12 games for kids, parents and grandparents: how AI works, where it can fool you and how to try it safely. New: Climb the mountain, Spot the AI mistakes, Memory, Quiz show and Sorting belt.</p>
+</div>
+<a class="cta" href="games.html" style="display: inline-flex; align-items: center; min-height: 52px; padding: 0 26px; border-radius: 999px; background: #17153B; color: #FFFFFF; text-decoration: none; font-weight: 700; font-size: 17px; box-sizing: border-box">All games →</a>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px">
+<a class="lift card" href="games.html#nauc" style="background: #28C840; border-radius: 24px; padding: 32px; display: flex; flex-direction: column; gap: 12px; text-decoration: none; color: #17153B">
+<span style="font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 13px; letter-spacing: 0.08em">FOR KIDS · LUDKO'S PATH · 4 GAMES</span>
+<h3 style="margin: 0; font-size: 24px; font-weight: 800">Teach Ludko</h3>
+<p style="margin: 0; font-size: 16px; line-height: 1.55">Show Ludko examples and see how AI learns. Then: Finish it like AI, What to tell AI? and Robot or human?</p>
+</a>
+<a class="lift card" href="games.html#podvod" style="background: #FF5F57; border-radius: 24px; padding: 32px; display: flex; flex-direction: column; gap: 12px; text-decoration: none; color: #17153B">
+<span style="font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 13px; letter-spacing: 0.08em">AI TRAPS · 2 GAMES</span>
+<h3 style="margin: 0; font-size: 24px; font-weight: 800">Spot the scam</h3>
+<p style="margin: 0; font-size: 16px; line-height: 1.55">Fake videos, cloned voices, "Hi Mum, this is my new number". Plus: Did AI make it up?</p>
+</a>
+<a class="lift card" href="games.html#dobrodruzstva" style="background: #A29BFE; border-radius: 24px; padding: 32px; display: flex; flex-direction: column; gap: 12px; text-decoration: none; color: #17153B">
+<span style="font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 13px; letter-spacing: 0.08em">NEW · ADVENTURES</span>
+<h3 style="margin: 0; font-size: 24px; font-weight: 800">Adventures and contests</h3>
+<p style="margin: 0; font-size: 16px; line-height: 1.55">Climb a mountain with Ludko, find the mistakes in AI pictures, play Memory, run a quiz show for the whole class or sort messages on the belt.</p>
+</a>
+<a class="lift card" href="games.html#senior" style="background: #FEBC2E; border-radius: 24px; padding: 32px; display: flex; flex-direction: column; gap: 12px; text-decoration: none; color: #17153B">
+<span style="font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 13px; letter-spacing: 0.08em">AI FOR SENIORS</span>
+<h3 style="margin: 0; font-size: 24px; font-weight: 800">Your first chat with AI</h3>
+<p style="margin: 0; font-size: 16px; line-height: 1.55">Try it step by step, with large text and no sign-up.</p>
+</a>
+</div>
+</div>
+</section>
+
+<!-- Regular series -->
+<section id="rubriky">
+<div class="sec" style="max-width: 1180px; margin: 0 auto; padding: 96px 24px; display: flex; flex-direction: column; gap: 40px">
+<h2 style="margin: 0; font-size: clamp(30px, 4vw, 44px); font-weight: 800; letter-spacing: -0.01em">Regular series</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px">
+<div class="lift card" style="border: 2px solid #17153B; border-radius: 24px; padding: 32px; display: flex; flex-direction: column; gap: 12px">
+<span style="display: inline-flex; align-items: center; gap: 10px; font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 14px"><span style="width: 14px; height: 14px; border-radius: 50%; background: #28C840"></span>MONDAY</span>
+<h3 style="margin: 0; font-size: 24px; font-weight: 800">Ludko's tip of the week</h3>
+<p style="margin: 0; font-size: 16px; line-height: 1.6; color: #36335E">One useful tip or cheat sheet to start the week.</p>
+</div>
+<a class="lift card" href="#quiz" style="border: 2px solid #17153B; border-radius: 24px; padding: 32px; display: flex; flex-direction: column; gap: 12px; text-decoration: none">
+<span style="display: inline-flex; align-items: center; gap: 10px; font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 14px"><span style="width: 14px; height: 14px; border-radius: 50%; background: #A29BFE"></span>WEDNESDAY</span>
+<h3 style="margin: 0; font-size: 24px; font-weight: 800">Myth or fact?</h3>
+<p style="margin: 0; font-size: 16px; line-height: 1.6; color: #36335E">An interactive story: take a guess and find out how AI really works.</p>
+</a>
+<a class="lift card" href="#week" style="border: 2px solid #17153B; border-radius: 24px; padding: 32px; display: flex; flex-direction: column; gap: 12px; text-decoration: none">
+<span style="display: inline-flex; align-items: center; gap: 10px; font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 14px"><span style="width: 14px; height: 14px; border-radius: 50%; background: #FF5F57"></span>SUNDAY</span>
+<h3 style="margin: 0; font-size: 24px; font-weight: 800">The Week in AI</h3>
+<p style="margin: 0; font-size: 16px; line-height: 1.6; color: #36335E">The five most important stories of the week, one sentence each, with a source and a date.</p>
+</a>
+</div>
+</div>
+</section>
+
+<!-- Free PDFs -->
+<section id="free" style="background: #F6F5FB">
+<div class="sec" style="max-width: 1180px; margin: 0 auto; padding: 96px 24px; display: flex; flex-direction: column; gap: 40px">
+<div style="display: flex; flex-direction: column; gap: 12px; max-width: 760px">
+<h2 style="margin: 0; font-size: clamp(30px, 4vw, 44px); font-weight: 800; letter-spacing: -0.01em">Free PDF cheat sheets</h2>
+<p style="margin: 0; font-size: 18px; line-height: 1.6; color: #36335E">Comment the keyword under any of our Instagram posts and we will send the PDF to your DMs. Can't see it? Check your Message requests.</p>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px">
+<div class="lift" style="background: #FFFFFF; border: 2px solid #17153B; border-radius: 20px; padding: 24px; display: flex; flex-direction: column; gap: 10px">
+<span style="font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 22px">PROMPTS</span>
+<span style="font-size: 16px; line-height: 1.5; color: #36335E">20 everyday AI prompts</span>
+</div>
+<div class="lift" style="background: #FFFFFF; border: 2px solid #17153B; border-radius: 20px; padding: 24px; display: flex; flex-direction: column; gap: 10px">
+<span style="font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 22px">TIPS</span>
+<span style="font-size: 16px; line-height: 1.5; color: #36335E">13 AI tips that actually work</span>
+</div>
+<div class="lift" style="background: #FFFFFF; border: 2px solid #17153B; border-radius: 20px; padding: 24px; display: flex; flex-direction: column; gap: 10px">
+<span style="font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 22px">EMAILS</span>
+<span style="font-size: 16px; line-height: 1.5; color: #36335E">10 email prompts</span>
+</div>
+<div class="lift" style="background: #FFFFFF; border: 2px solid #17153B; border-radius: 20px; padding: 24px; display: flex; flex-direction: column; gap: 10px">
+<span style="font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 22px">PRIVACY</span>
+<span style="font-size: 16px; line-height: 1.5; color: #36335E">ChatGPT privacy: 5 settings in 5 minutes</span>
+</div>
+<div class="lift" style="background: #FFFFFF; border: 2px solid #17153B; border-radius: 20px; padding: 24px; display: flex; flex-direction: column; gap: 10px">
+<span style="font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 22px">PARENTS</span>
+<span style="font-size: 16px; line-height: 1.5; color: #36335E">AI &amp; kids: a guide for parents</span>
+</div>
+<div class="lift" style="background: #FFFFFF; border: 2px solid #17153B; border-radius: 20px; padding: 24px; display: flex; flex-direction: column; gap: 10px">
+<span style="font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 22px">BUSINESS</span>
+<span style="font-size: 16px; line-height: 1.5; color: #36335E">7 prompts for your business</span>
+</div>
+</div>
+</div>
+</section>
+
+<!-- For parents -->
+<section id="parents">
+<div class="sec" style="max-width: 1180px; margin: 0 auto; padding: 96px 24px; display: flex; flex-wrap: wrap; gap: 32px 48px; align-items: center; justify-content: space-between">
+<div style="flex: 1 1 420px; max-width: 720px; display: flex; flex-direction: column; gap: 16px">
+<span style="font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 14px; letter-spacing: 0.08em; color: #4A4775">SERIES FOR PARENTS</span>
+<h2 style="margin: 0; font-size: clamp(30px, 4vw, 44px); line-height: 1.1; font-weight: 800">AI and kids</h2>
+<p style="margin: 0; font-size: 18px; line-height: 1.6; color: #36335E">Kids meet AI on their phones, at school and in games. We show you how to talk with them about AI at every age and what to allow. You also get a family agreement to print and games for kids.</p>
+</div>
+<a class="cta" href="parents.html" style="display: inline-flex; align-items: center; min-height: 56px; padding: 0 28px; border-radius: 999px; background: #FEBC2E; color: #17153B; border: 3px solid #17153B; box-shadow: 5px 5px 0 #17153B; text-decoration: none; font-weight: 800; font-size: 17px; box-sizing: border-box">The full page for parents →</a>
+</div>
+</section>
+
+<!-- How we check facts -->
+<section id="verify" style="background: #F6F5FB">
+<div class="sec" style="max-width: 1180px; margin: 0 auto; padding: 96px 24px; display: flex; flex-wrap: wrap; gap: 48px">
+<div style="flex: 1 1 340px; display: flex; flex-direction: column; gap: 16px">
+<h2 style="margin: 0; font-size: clamp(30px, 4vw, 44px); font-weight: 800; letter-spacing: -0.01em">How we check facts</h2>
+<p style="margin: 0; font-size: 18px; line-height: 1.6; color: #36335E">We want everyone to understand AI, not just techies. That is why trust comes first.</p>
+<a href="corrections.html" style="align-self: flex-start; font-weight: 700; font-size: 17px; padding: 10px 0">See all corrections →</a>
+</div>
+<ol style="flex: 999 1 520px; min-width: 0; margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 16px">
+<li style="display: flex; gap: 20px; align-items: flex-start; padding: 24px; background: #FFFFFF; border: 2px solid #E6E5F0; border-radius: 20px">
+<span style="flex: none; width: 44px; height: 44px; border-radius: 50%; background: #FF5F57; display: flex; align-items: center; justify-content: center; font-family: 'JetBrains Mono', monospace; font-weight: 700">1</span>
+<div style="display: flex; flex-direction: column; gap: 6px"><strong style="font-size: 19px">A source and a date on every story</strong><span style="font-size: 16px; line-height: 1.55; color: #36335E">We use official company announcements and trusted media. You can always check the source yourself.</span></div>
+</li>
+<li style="display: flex; gap: 20px; align-items: flex-start; padding: 24px; background: #FFFFFF; border: 2px solid #E6E5F0; border-radius: 20px">
+<span style="flex: none; width: 44px; height: 44px; border-radius: 50%; background: #FEBC2E; display: flex; align-items: center; justify-content: center; font-family: 'JetBrains Mono', monospace; font-weight: 700">2</span>
+<div style="display: flex; flex-direction: column; gap: 6px"><strong style="font-size: 19px">Explained, not just repeated</strong><span style="font-size: 16px; line-height: 1.55; color: #36335E">With every story we add what changed and how you can use it at work and at home.</span></div>
+</li>
+<li style="display: flex; gap: 20px; align-items: flex-start; padding: 24px; background: #FFFFFF; border: 2px solid #E6E5F0; border-radius: 20px">
+<span style="flex: none; width: 44px; height: 44px; border-radius: 50%; background: #28C840; display: flex; align-items: center; justify-content: center; font-family: 'JetBrains Mono', monospace; font-weight: 700">3</span>
+<div style="display: flex; flex-direction: column; gap: 6px"><strong style="font-size: 19px">We correct mistakes in public</strong><span style="font-size: 16px; line-height: 1.55; color: #36335E">If we get something wrong, we publish a correction with the date and what was wrong, here on the site and in a Corrections story.</span></div>
+</li>
+</ol>
+</div>
+</section>
+
+<!-- Call to action -->
+<section class="sec" style="padding: 96px 24px">
+<div class="cta-card" style="max-width: 1132px; margin: 0 auto; background: #28C840; border-radius: 32px; padding: 56px 40px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 32px">
+<div style="flex: 999 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 12px">
+<h2 style="margin: 0; font-size: clamp(28px, 3.5vw, 40px); font-weight: 800">Will you help us?</h2>
+<p style="margin: 0; font-size: 18px; line-height: 1.6">Our news, tips and how-tos are free and always come with a source. If you find them useful, share the profile with friends, family or colleagues. For a small account that is the biggest help.</p>
+</div>
+<a class="cta" href="https://www.instagram.com/aisanely/" style="flex: none; display: inline-flex; align-items: center; justify-content: center; background: #17153B; color: #FFFFFF; text-decoration: none; font-weight: 700; font-size: 17px; padding: 18px 32px; border-radius: 999px; min-height: 44px; box-sizing: border-box">Open @aisanely</a>
+</div>
+</section>
+
+<!-- Footer -->
+<footer style="border-top: 1px solid #E6E5F0">
+<div style="max-width: 1180px; margin: 0 auto; padding: 32px 24px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; font-size: 15px; color: #36335E">
+<span><strong style="color: #17153B">AI Sanely</strong> · AI in plain English</span>
+<span style="display: flex; flex-wrap: wrap; gap: 6px 18px"><a href="start.html">Start here</a><a href="games.html">Games</a><a href="schools.html">For schools</a><a href="corrections.html">Corrections</a><a href="privacy.html">Privacy</a><a href="https://www.instagram.com/aisanely/">Instagram @aisanely</a><a href="mailto:info@aisanely.com">info@aisanely.com</a></span>
+</div>
 </footer>
+
+</div>
+</div>
+<script src="assets/vue.global.prod.js"></script>
+<script src="assets/dc-shim.js"></script>
+<script>
+/* Page content. On the live site it is loaded from data.json, which a scheduled task keeps up to date. */
+var DATA = {
+  triad: {
+    date: '24 Nov 2026',
+    posts: [
+      { color: '#FF5F57', tag: 'NEWS', title: 'Claude in Copilot switches on for EU companies', body: 'From 9 December, Microsoft turns on Anthropic\'s Claude models in Microsoft 365 Copilot for EU and EFTA organizations that haven\'t opted out.', prompt: '', meta: 'Microsoft 365 Message Center · 10 Nov 2026', link: 'https://www.instagram.com/aisanely/' },
+      { color: '#28C840', tag: 'AI TIP #1', title: 'Ask AI to pick your idea apart', body: 'AI tends to agree with you. Asking for criticism shows you the weak spots before you hit them.', prompt: 'Here is my plan: [plan]. Be critical. Where could I be wrong, and what have I forgotten?', meta: 'Ludko\'s tip', link: 'https://www.instagram.com/aisanely/' },
+      { color: '#FEBC2E', tag: 'TOOL · 1 MINUTE', title: 'Perplexity: AI search that shows sources', body: 'Ask a normal question. Each sentence in the answer has a small number. Click it and you see where the information came from.', prompt: '', meta: 'perplexity.ai · verified 19 Nov 2026', link: 'https://www.instagram.com/aisanely/' }
+    ]
+  },
+  tyzden: { range: '', verified: '', items: [] },
+  tyzdenUkazka: {
+    range: '[DD–DD Mon YYYY]', verified: '[DD Mon YYYY]',
+    items: [1, 2, 3, 4, 5].map(function (i) { return { num: i, h: '[Story ' + i + ': headline up to 8 words]', t: '[What happened and what it means for you, in one sentence.]', meta: '[source] · [DD Mon]' }; })
+  },
+  quiz: [
+    { q: 'When you delete a chat, ChatGPT also forgets everything it remembered from it.', fakt: false, why: 'A saved memory stays. You have to delete it in Settings → Personalization → Memory too.', src: 'help.openai.com · verified 13 Nov 2026' },
+    { q: 'Your ChatGPT conversations can be used to improve the models, but you can turn that off.', fakt: true, why: 'In Settings → Data controls you can turn off "Improve the model for everyone".', src: 'help.openai.com' },
+    { q: 'When AI sounds confident, the answer must be true.', fakt: false, why: 'Language models can be wrong even when they sound convincing. Always check important information.', src: 'the notice under the ChatGPT chat box' },
+    { q: 'Gemini is an AI assistant made by Google.', fakt: true, why: 'Gemini is developed by Google. OpenAI makes ChatGPT and Microsoft makes Copilot.', src: 'gemini.google.com' }
+  ]
+};
+var FACES = [
+  { text: 'Hi, I\'m Ludko!', color: '#28C840', smile: 1, o: 0, flat: 0, brow: 0, cheeks: 1, badge: 'bWave' },
+  { text: 'News always with a source and a date.', color: '#FF5F57', smile: 0, o: 1, flat: 0, brow: 0, cheeks: 0, badge: 'bNove' },
+  { text: 'Tip: ask AI to criticize your plan.', color: '#FEBC2E', smile: 1, o: 0, flat: 0, brow: 0, cheeks: 1, badge: 'bTip' },
+  { text: 'Myth or fact? Take a guess below.', color: '#A29BFE', smile: 0, o: 0, flat: 1, brow: 1, cheeks: 0, badge: 'bHmm' },
+  { text: 'We check every story.', color: '#28C840', smile: 1, o: 0, flat: 0, brow: 0, cheeks: 1, badge: 'bOk' },
+  { text: 'Careful! Deleted chat ≠ deleted memory.', color: '#FF5F57', smile: 0, o: 1, flat: 0, brow: 0, cheeks: 0, badge: 'bPozor' }
+];
+class Component extends DCLogic {
+constructor(props) {
+  super(props);
+  this.state = { i: 0, px: 0, py: 0, qi: 0, pick: null, score: 0, round: 0, menu: false, big: false };
+  this.el = null;
+  this.raf = 0;
+  this.onMove = this.onMove.bind(this);
+}
+componentDidMount() { window.addEventListener('mousemove', this.onMove); }
+componentWillUnmount() {
+  window.removeEventListener('mousemove', this.onMove);
+  if (this.raf) cancelAnimationFrame(this.raf);
+}
+onMove(e) {
+  var self = this, x = e.clientX, y = e.clientY;
+  if (this.raf) return;
+  this.raf = requestAnimationFrame(function () {
+    self.raf = 0;
+    if (!self.el) return;
+    var r = self.el.getBoundingClientRect();
+    var dx = x - (r.left + r.width / 2), dy = y - (r.top + r.height * 0.55);
+    var d = Math.sqrt(dx * dx + dy * dy) || 1, k = Math.min(1, d / 260);
+    self.setState({ px: Math.round(dx / d * 4 * k), py: Math.round(dy / d * 5 * k) });
+  });
+}
+answer(isFakt) {
+  var q = DATA.quiz[this.state.qi];
+  var ok = q.fakt === isFakt;
+  this.setState({ pick: isFakt, score: this.state.score + (ok ? 1 : 0) });
+}
+renderVals() {
+  var self = this, s = this.state;
+  var f = FACES[s.i % FACES.length];
+  var face = { smile: f.smile, o: f.o, flat: f.flat, brow: f.brow, cheeks: f.cheeks, bWave: 0, bNove: 0, bTip: 0, bHmm: 0, bOk: 0, bPozor: 0 };
+  face[f.badge] = 1;
+
+  var preview = this.props.showTyzdenPreview ?? false;
+  var t = (DATA.tyzden.items.length || !preview) ? DATA.tyzden : DATA.tyzdenUkazka;
+  var has = t.items.length > 0;
+
+  var total = DATA.quiz.length, done = s.qi >= total;
+  var q = done ? DATA.quiz[0] : DATA.quiz[s.qi];
+  var answered = s.pick !== null;
+  var ok = answered && q.fakt === s.pick;
+  var scoreText = s.score === total ? 'Great, you\'re up to speed!' : (s.score >= total / 2 ? 'Good job!' : 'No worries, that\'s why we\'re here.');
+
+  return {
+    rootClass: s.big ? 'big' : '',
+    bigLabel: s.big ? 'A−' : 'A+',
+    bigPressed: s.big ? 'true' : 'false',
+    bigBg: s.big ? '#FEBC2E' : '#FFFFFF',
+    toggleBig: function () { self.setState({ big: !self.state.big }); },
+    menuOpen: s.menu,
+    menuClosed: !s.menu,
+    menuClass: s.menu ? 'open' : '',
+    menuExpanded: s.menu ? 'true' : 'false',
+    menuLabel: s.menu ? 'Close menu' : 'Open menu',
+    toggleMenu: function () { self.setState({ menu: !self.state.menu }); },
+    closeMenu: function () { self.setState({ menu: false }); },
+    line: f.text,
+    bubbleColor: f.color,
+    bubbleClass: s.i % 2 ? 'pop-b' : 'pop-a',
+    badgeClass: s.i % 2 ? 'badge-b' : 'badge-a',
+    face: face,
+    hl: 'translate(' + s.px + ' ' + s.py + ')',
+    nextLine: function () { self.setState({ i: self.state.i + 1 }); },
+    ludkoRef: function (el) { self.el = el; },
+    triad: DATA.triad.posts ? { date: DATA.triad.date, posts: DATA.triad.posts.map(function (p) { return Object.assign({}, p, { hasPrompt: !!p.prompt }); }) } : DATA.triad,
+    tyzden: { has: has, empty: !has, range: t.range, verified: t.verified, items: t.items },
+    quiz: {
+      playing: !done, done: done, num: s.qi + 1, total: total, q: q.q,
+      asking: !answered, answered: answered,
+      verdict: (ok ? 'Correct! ' : 'Not quite. ') + 'It\'s a ' + (q.fakt ? 'fact.' : 'myth.'),
+      verdictBg: ok ? '#C9F2D2' : '#FFD6D3',
+      anim: s.qi % 2 ? 'pop-b' : 'pop-a',
+      why: q.why, src: q.src,
+      nextLabel: s.qi + 1 < total ? 'Next question' : 'Show result',
+      score: s.score, scoreText: scoreText,
+      pickMytus: function () { self.answer(false); },
+      pickFakt: function () { self.answer(true); },
+      next: function () { self.setState({ qi: self.state.qi + 1, pick: null }); },
+      restart: function () { self.setState({ qi: 0, pick: null, score: 0 }); }
+    }
+  };
+}
+}
+mountPage(Component);
+</script>
+<script src="assets/pribeh.js"></script>
 </body>
 </html>

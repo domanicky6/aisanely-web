@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy · AI Sanely</title>
+<meta name="description" content="What we know about you? Almost nothing. No sign-up, no cookies. What your browser stores, how free PDFs via Instagram work and where the site runs.">
+<meta property="og:title" content="Privacy: what do we know about you? Almost nothing.">
+<meta property="og:description" content="No sign-up and no cookies. Exactly what is stored where, in plain English.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://aisanely.com/privacy.html">
+<meta property="og:image" content="https://aisanely.com/assets/og/privacy.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Privacy at AI Sanely: no cookies, no sign-up. Mascot Ludko.">
+<meta property="og:site_name" content="AI Sanely">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#17153B">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="manifest" href="assets/site.webmanifest">
+<link rel="stylesheet" href="assets/fonts/fonts.css">
+<link rel="stylesheet" href="assets/ui.css">
+<style>
+.beta-bar{background:#C62828;color:#FFFFFF;text-align:center;font:600 13px/1.4 Montserrat,system-ui,sans-serif;padding:6px 16px}
+.facts{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr))}
+.fact{border-radius:20px;padding:1.3rem;border:3px solid var(--ink);display:flex;flex-direction:column;gap:.45rem}
+.fact .e{font-size:2.1rem;line-height:1}
+.fact b{font-size:1.15rem}
+.fact span{line-height:1.55;color:var(--ink2)}
+.prose{max-width:46rem;font-size:1.1rem;line-height:1.65;color:var(--ink2)}
+.prose p{margin:0 0 1rem}
+.prose b{color:var(--ink)}
+.store{display:flex;flex-direction:column;gap:.7rem;max-width:46rem;margin:1.2rem 0 1.4rem;padding:0;list-style:none}
+.store li{display:grid;grid-template-columns:auto 1fr;gap:.9rem;align-items:center;background:#fff;border:3px solid var(--ink);border-radius:18px;padding:.9rem 1.1rem}
+.store .e{font-size:1.7rem}
+.store b{display:block;font-size:1.05rem}
+.store small{color:var(--mut);font-size:.9rem}
+.store .have{font-family:"JetBrains Mono",monospace;font-size:.75rem;font-weight:700;color:var(--mut)}
+.store .have.on{color:#1B7F34}
+#wipe.sure{background:#FFD6D3}
+#wipeMsg{margin:.9rem 0 0;font-weight:700;min-height:1.5em}
+.upd{font-size:.95rem;color:var(--mut)}
+html:not(.stats-on) [data-stats="on"],html.stats-on [data-stats="off"]{display:none!important}
+</style>
+<script src="assets/stats.js"></script>
+</head>
+<body>
+<div class="beta-bar" role="note">This site is in beta. We are still working on it.</div>
+<header id="site-header"></header>
+<main id="main">
+
+<section class="hero">
+  <div class="wrap">
+    <div class="txt">
+      <span class="kicker">Privacy</span>
+      <h1>What do we know about you? Almost nothing.</h1>
+      <p class="lead" data-stats="off">No sign-up, no cookies, no tracking. Here is exactly what is stored where and what we do with it, without the legalese.</p>
+      <p class="lead" data-stats="on">No sign-up and no cookies. We only count anonymous visits. Here is exactly what is stored where and what we do with it, without the legalese.</p>
+    </div>
+    <div class="art bob" data-ludko="hi" data-w="230"></div>
+  </div>
+</section>
+
+<section class="sec tint">
+  <div class="wrap">
+    <h2>In short</h2>
+    <div class="facts">
+      <div class="fact" style="background:#C9F2D2"><span class="e" aria-hidden="true">🍪</span><b>No cookies</b><span>The site doesn’t use cookies. That’s why we don’t ask you about them.</span></div>
+      <div class="fact" style="background:#EEECFF" data-stats="off"><span class="e" aria-hidden="true">🙈</span><b>No tracking</b><span>We don’t measure who you are or what you do here. We have no advertising or analytics tools.</span></div>
+      <div class="fact" style="background:#EEECFF" data-stats="on"><span class="e" aria-hidden="true">📊</span><b>Totals, not you</b><span>We count how many people view the pages and games. We don’t know who you are, and we don’t follow you on other sites.</span></div>
+      <div class="fact" style="background:#FFF3CF" data-stats="off"><span class="e" aria-hidden="true">🏠</span><b>Everything in one place</b><span>Fonts and all other files are hosted on aisanely.com itself. We load nothing from Google or other companies.</span></div>
+      <div class="fact" style="background:#FFF3CF" data-stats="on"><span class="e" aria-hidden="true">🏠</span><b>Everything in one place</b><span>Fonts, scripts and images are hosted on aisanely.com itself. The only exception is anonymous visit counting.</span></div>
+      <div class="fact" style="background:#FFD6D3"><span class="e" aria-hidden="true">📱</span><b>Your browser remembers the games</b><span>Stars and badges stay with you. They never reach us.</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <h2>What your browser remembers</h2>
+    <div class="prose">
+      <p>So you don’t have to start over, the site saves a few things right in your browser. The technical term is local storage. <b>These aren’t cookies, they aren’t sent anywhere and we can’t see them.</b> They stay there until you delete them.</p>
+    </div>
+    <ul class="store">
+      <li><span class="e" aria-hidden="true">⭐</span><span><b>Game progress</b><small>Stars, badges and finished games.</small><span class="have" data-key="aisanely-games-v1"></span></span></li>
+      <li><span class="e" aria-hidden="true">🔊</span><span><b>Game settings</b><small>Sound, larger text and calm mode.</small><span class="have" data-key="aisanely-games-prefs"></span></span></li>
+      <li><span class="e" aria-hidden="true">✅</span><span><b>Ticked-off steps</b><small>Which of the 7 steps on the Start here page you’ve done.</small><span class="have" data-key="aisanely-7days"></span></span></li>
+      <li><span class="e" aria-hidden="true">🔠</span><span><b>Larger text</b><small>Whether you turned on the A+ button.</small><span class="have" data-key="aisanely-big"></span></span></li>
+    </ul>
+    <button type="button" class="btn" id="wipe">🗑 Delete everything the site remembers</button>
+    <p id="wipeMsg" aria-live="polite"></p>
+  </div>
+</section>
+
+<section class="sec tint">
+  <div class="wrap">
+    <h2>PDFs via Instagram</h2>
+    <div class="prose">
+      <p>When you comment a word like PROMPTS, we send you a PDF in an Instagram DM. All we see is what anyone on Instagram sees: your username, your comment and our conversation.</p>
+      <p><b>We don’t copy any of it anywhere else.</b> We don’t add you to any list, we don’t sell anything and we don’t send you marketing messages afterwards.</p>
+      <p>Comments and messages are handled by Instagram (Meta) under its own rules. We also manage posts and replies through a social media management tool that works with them only on our behalf. You can delete your comment or message at any time. If you want us to delete the conversation too, just tell us.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <h2>Kids and schools</h2>
+    <div class="prose">
+      <p>The games need no sign-up, have no chat and never ask for a name. Kids don’t have to fill in anything about themselves. In class you can run them on a projector without any account.</p>
+    </div>
+    <h2 style="margin-top:2.4rem">Where the site runs, and links to other sites</h2>
+    <div class="prose">
+      <p>The site runs on GitHub Pages. As with any website, GitHub’s servers see your IP address when you visit and use it for security and operations. We have no access to that data.</p>
+      <p>In some places we link to other websites: Instagram, news sources or tools for schools. Once you click a link, their rules apply.</p>
+    </div>
+    <div data-stats="on">
+    <h2 style="margin-top:2.4rem">Counting visits</h2>
+    <div class="prose">
+      <p>We want to know which pages and games people enjoy. So we count visits with <a href="https://www.goatcounter.com/">GoatCounter</a>. It doesn’t use cookies and doesn’t store anything in your browser.</p>
+      <p><b>A visit sends:</b> the page address, the site you came from and your screen width. We also count some clicks, for example on Instagram, on our email address or starting a game.</p>
+      <p>GoatCounter works out your country from your IP address, and your browser name and system from its user agent. It doesn’t store the IP address or the user agent in its database. To avoid counting one visit twice, it keeps them in memory for at most 8 hours.</p>
+      <p>We only see totals, for example how many people started Ludko to the top today. We don’t know who you are. We don’t sell anything and don’t pass it on to anyone.</p>
+      <p>Counting only happens on aisanely.com. If your browser has Do Not Track or Global Privacy Control turned on, nothing is sent.</p>
+    </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec lil">
+  <div class="wrap">
+    <h2>Questions?</h2>
+    <div class="prose">
+      <p>Send us a message on Instagram <a href="https://www.instagram.com/aisanely/">@aisanely</a>. If anything here changes, we’ll update this page and the date below.</p>
+      <p class="upd">Last updated 20 Nov 2026.</p>
+    </div>
+  </div>
+</section>
+
+</main>
+<footer id="site-footer"></footer>
+<script src="assets/ui.js"></script>
+<script>
+(function () {
+  var KEYS = ['aisanely-games-v1', 'aisanely-games-prefs', 'aisanely-7days', 'aisanely-big'];
+  function has(k) { try { return localStorage.getItem(k) !== null; } catch (e) { return false; } }
+  function show() {
+    Array.prototype.forEach.call(document.querySelectorAll('.have'), function (el) {
+      var on = has(el.getAttribute('data-key'));
+      el.textContent = on ? '● saved in this browser' : '○ nothing saved';
+      el.classList.toggle('on', on);
+    });
+  }
+  var b = document.getElementById('wipe'), msg = document.getElementById('wipeMsg'), sure = false, tm = 0;
+  b.onclick = function () {
+    if (!sure) {
+      sure = true; b.classList.add('sure'); b.textContent = 'Are you sure? Tap again';
+      msg.textContent = 'You’ll lose your stars and badges from the games.';
+      clearTimeout(tm); tm = setTimeout(function () { sure = false; b.classList.remove('sure'); b.textContent = '🗑 Delete everything the site remembers'; msg.textContent = ''; }, 5000);
+      return;
+    }
+    clearTimeout(tm); sure = false;
+    KEYS.forEach(function (k) { try { localStorage.removeItem(k); } catch (e) {} });
+    document.documentElement.classList.remove('big');
+    b.classList.remove('sure'); b.textContent = '🗑 Delete everything the site remembers';
+    msg.textContent = '✓ Done. The site now remembers nothing about you.';
+    show();
+  };
+  show();
+})();
+</script>
+</body>
+</html>

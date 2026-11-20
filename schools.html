@@ -1,0 +1,509 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>For schools: AI literacy in the classroom · AI Sanely</title>
+<meta name="description" content="Games and ready-made lessons about artificial intelligence for grades 1 to 12. Free, no sign-up. 30 to 45-minute plans with worksheets and a classroom AI agreement.">
+<meta property="og:title" content="For schools: AI literacy in the classroom">
+<meta property="og:description" content="Games and ready-made AI lessons by age group. Free, no sign-up.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://aisanely.com/schools.html">
+<meta property="og:image" content="https://aisanely.com/assets/og/schools.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="For schools: 45-minute lessons about AI. Mascot Ludko.">
+<meta property="og:site_name" content="AI Sanely">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#17153B">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="manifest" href="assets/site.webmanifest">
+<link rel="stylesheet" href="assets/fonts/fonts.css">
+<link rel="stylesheet" href="assets/ui.css">
+<style>
+.ages{display:flex;flex-wrap:wrap;gap:.6rem;margin-bottom:1.6rem}
+.age{display:flex;flex-direction:column;align-items:flex-start;gap:.1rem;min-height:4rem;padding:.6rem 1.1rem;border:3px solid var(--ink);border-radius:18px;background:#fff;cursor:pointer;box-shadow:4px 4px 0 var(--ink);font-weight:900;font-size:1.05rem;transition:transform .15s,box-shadow .15s,background .2s}
+.age small{font-weight:700;font-size:.8rem;color:var(--mut)}
+.age:hover{transform:translate(-2px,-2px)}
+.age[aria-selected="true"]{background:var(--ink);color:#fff;box-shadow:4px 4px 0 var(--yel)}
+.age[aria-selected="true"] small{color:#D6D4EA}
+.lesson{display:flex;flex-direction:column;gap:.8rem;animation:slideUp .45s ease both}
+.lesson .top{display:flex;flex-wrap:wrap;gap:.4rem;align-items:center}
+.lesson h3{margin:0;font-size:1.35rem;line-height:1.2}
+.lesson .goal{background:var(--grn2);border:2px solid var(--ink);border-radius:14px;padding:.6rem .8rem;font-weight:700;line-height:1.45}
+.plan{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.45rem}
+.plan li{display:grid;grid-template-columns:4.2rem 1fr;gap:.6rem;align-items:start;line-height:1.45}
+.plan .m{font-family:"JetBrains Mono",monospace;font-weight:700;font-size:.85rem;background:var(--lil2);border:2px solid var(--ink);border-radius:999px;text-align:center;padding:.1rem 0}
+.lesson .q{background:var(--yel2);border:2px dashed var(--ink);border-radius:14px;padding:.6rem .8rem;line-height:1.5}
+.lesson .games{display:flex;flex-wrap:wrap;gap:.5rem}
+.lesson details{border-top:2px solid #E6E5F0;padding-top:.6rem}
+.lesson summary{cursor:pointer;font-weight:800}
+.why{display:grid;gap:1.2rem;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr))}
+.why .card{display:flex;flex-direction:column;gap:.4rem}
+.why .e{font-size:2.2rem}
+.why b{font-size:1.12rem}
+.why span{color:var(--ink2);line-height:1.5}
+.deal{background:#fff;border:3px solid var(--ink);border-radius:24px;padding:1.8rem;box-shadow:7px 7px 0 var(--ink);max-width:760px}
+.deal h3{margin:0 0 .3rem;font-size:1.6rem}
+.deal ol{margin:.8rem 0;padding-left:1.4rem;display:flex;flex-direction:column;gap:.55rem;line-height:1.55;font-size:1.05rem}
+.deal .sign{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:1.6rem}
+.deal .sign span{border-top:2px solid var(--ink);padding-top:.3rem;font-size:.85rem;color:var(--mut)}
+.res{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr))}
+.res a{display:flex;flex-direction:column;gap:.35rem;text-decoration:none;padding:1.1rem 1.2rem}
+.res b{font-size:1.05rem}.res span{color:var(--ink2);font-size:.95rem;line-height:1.45}
+.tips{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr))}
+.tip{display:flex;gap:.8rem;align-items:flex-start;line-height:1.5}
+.tip .n{flex:none;width:2.6rem;height:2.6rem;border-radius:12px;background:var(--yel);border:2px solid var(--ink);display:flex;align-items:center;justify-content:center;font-size:1.3rem}
+@media print{.ages,.lessons-wrap,.hero,.why-sec,.tips-sec,.res-sec{display:none!important}.deal{box-shadow:none;border-width:2px;max-width:none}}
+.beta-bar{background:#C62828;color:#FFFFFF;text-align:center;font:600 13px/1.4 Montserrat,system-ui,sans-serif;padding:6px 16px}
+</style>
+<script src="assets/stats.js"></script>
+</head>
+<body>
+<div class="beta-bar" role="note">This site is in beta. We are still working on it.</div>
+<header id="site-header"></header>
+<main id="main">
+
+<section class="hero">
+  <div class="wrap">
+    <div class="txt">
+      <span class="kicker">For schools · free · no sign-up</span>
+      <h1>AI literacy in the classroom. Playful and no prep.</h1>
+      <p class="lead">Ready-made 30 to 45-minute lessons and games you can put up on the projector. By age group, with no accounts and no data collection.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:.8rem;margin-top:.4rem">
+        <a class="btn yel" href="#lessons-sec">Pick a lesson by age →</a>
+        <a class="btn" href="#agreement">Classroom AI agreement</a>
+      </div>
+    </div>
+    <div class="art bob" data-ludko="hi" data-w="240"></div>
+  </div>
+</section>
+
+<section class="sec why-sec">
+  <div class="wrap">
+    <span class="kicker">Why it works this way</span>
+    <h2>Made for real classrooms</h2>
+    <p class="lead">AI literacy is finding its way into schools everywhere. Our games and lessons add what kids enjoy most: short games with instant feedback, followed by a real conversation.</p>
+    <div class="why">
+      <div class="card reveal"><span class="e" aria-hidden="true">🧒</span><b>By age</b><span>Younger students discover how AI learns from examples. Older ones learn to check facts, spot deepfakes and use AI fairly.</span></div>
+      <div class="card reveal"><span class="e" aria-hidden="true">👩‍🏫</span><b>The teacher leads with the youngest</b><span>With 6 to 10-year-olds, the teacher runs the game on the board and the class votes. Kids need no account and no device of their own.</span></div>
+      <div class="card reveal"><span class="e" aria-hidden="true">🔒</span><b>No accounts, no data</b><span>The games send nothing and need no sign-up or email. They work in any normal browser and on tablets.</span></div>
+      <div class="card reveal"><span class="e" aria-hidden="true">💬</span><b>Conversation is the core</b><span>Every game ends with a discussion question. The game is just the start. The learning happens in the conversation.</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec tint lessons-wrap" id="lessons-sec" style="scroll-margin-top:4rem">
+  <div class="wrap">
+    <span class="kicker">Lessons and games by age</span>
+    <h2>Choose your students’ age</h2>
+    <p class="lead">Each lesson has a goal, a timed plan, an unplugged activity and discussion questions. Games open with one click. Download the full lesson with a worksheet as a PDF.</p>
+    <div class="ages" role="tablist" aria-label="Students’ age" id="ages"></div>
+    <div class="grid" id="lessons" role="tabpanel" aria-live="polite"></div>
+  </div>
+</section>
+
+<section class="sec tips-sec">
+  <div class="wrap">
+    <span class="kicker">Class mode</span>
+    <h2>How to play with the whole class</h2>
+    <div class="tips" style="margin-top:1.4rem">
+      <div class="tip"><span class="n">📽️</span><span><b>Projector and A+.</b> Turn on larger text in the game. Cards and buttons are big enough for the back row.</span></div>
+      <div class="tip"><span class="n">✋</span><span><b>Voting.</b> Before each answer, let the class vote with their hands (thumbs up/down, or A/B/C cards). Then click.</span></div>
+      <div class="tip"><span class="n">🗣️</span><span><b>Read aloud.</b> With first and second graders, you or a student read the questions aloud. Then the class votes.</span></div>
+      <div class="tip"><span class="n">⏸️</span><span><b>Calm mode.</b> In timed games, turn on calm mode. Leave time to think and talk.</span></div>
+      <div class="tip"><span class="n">🏆</span><span><b>Teams.</b> In Ludko to the top, groups compete to see who climbs with fewer slips.</span></div>
+      <div class="tip"><span class="n">❓</span><span><b>“Why?”</b> The best question after every answer. Even with a right answer, let students explain it in their own words.</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec lil" id="agreement" style="scroll-margin-top:4rem">
+  <div class="wrap">
+    <span class="kicker noprint">To print</span>
+    <h2 class="noprint">Classroom AI agreement</h2>
+    <p class="lead noprint">Create it with your students at the end of the lesson “AI and homework”. Change the points as you like. What matters is that they’re yours.</p>
+    <div class="deal">
+      <span class="kicker" style="font-size:.75rem">AI Sanely · classroom agreement</span>
+      <h3>How we use AI in our class</h3>
+      <ol>
+        <li>We use AI as a <b>helper</b>, not as a replacement for our own thinking.</li>
+        <li>When AI helped us, <b>we say so</b>: we write what it helped with and how.</li>
+        <li>We <b>check</b> facts from AI in another reliable source.</li>
+        <li>We <b>don’t put</b> personal data, passwords or classmates’ photos into AI.</li>
+        <li>We <b>don’t use</b> AI pictures, videos or voices to hurt or make fun of anyone.</li>
+        <li>When something from AI scares or confuses us, <b>we tell</b> a teacher or a parent.</li>
+        <li><b>We are responsible</b> for what we hand in or post.</li>
+      </ol>
+      <div class="sign"><span>Class and date</span><span>Signatures</span></div>
+    </div>
+    <div class="noprint" style="margin-top:1.4rem;display:flex;gap:.8rem;flex-wrap:wrap"><button type="button" class="btn yel" onclick="window.print()">🖨️ Print the agreement</button></div>
+  </div>
+</section>
+
+<section class="sec res-sec">
+  <div class="wrap">
+    <span class="kicker">More trusted resources</span>
+    <h2>When you want to go deeper</h2>
+    <p class="lead">Unpaid recommendations. We link to them because they are good and freely available.</p>
+    <div class="res">
+      <a class="card lift" href="https://www.commonsense.org/education/collections/ai-literacy-lessons-for-grades-k-12"><b>AI Literacy Lessons (Common Sense Education)</b><span>Quick, free lessons on how AI works, bias, chatbots and responsible use.</span></a>
+      <a class="card lift" href="https://dayofai.org/curriculum-resources"><b>Day of AI (MIT RAISE)</b><span>Free units by grade, from learning from patterns to checking information.</span></a>
+      <a class="card lift" href="https://teachablemachine.withgoogle.com/"><b>Teachable Machine (Google)</b><span>Students train their own model to recognize pictures or sounds from the webcam, right in the browser.</span></a>
+      <a class="card lift" href="https://quickdraw.withgoogle.com/"><b>Quick, Draw! (Google)</b><span>You draw and AI guesses. Great for talking about how AI “sees” differently from people.</span></a>
+      <a class="card lift" href="https://code.org/oceans"><b>AI for Oceans (Code.org)</b><span>Students teach AI to sort fish and trash and find out what bad training does.</span></a>
+      <a class="card lift" href="https://www.elementsofai.com/"><b>Elements of AI (University of Helsinki)</b><span>A free online course for adults and older students: what AI is and what it can and can’t do.</span></a>
+    </div>
+    <p style="margin-top:1.6rem;color:var(--ink2);line-height:1.6">Want a lesson or a talk for your school, or have an idea for a game? Message us on <a href="https://www.instagram.com/aisanely/">Instagram @aisanely</a>.</p>
+  </div>
+</section>
+
+</main>
+<footer id="site-footer"></footer>
+<script src="assets/ui.js"></script>
+<script>
+(function () {
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+  var G = {"nauc": "🍎 Teach Ludko", "slovo": "💬 Finish it like AI", "prezradit": "🤫 What to tell AI?", "robot": "🤖 Robot or human?", "podvod": "🚨 Spot the scam", "halu": "🔍 Did AI make it up?", "vrchol": "🧗 Ludko to the top", "chyby": "🔍 Spot the AI mistakes", "pexeso": "🃏 AI Memory", "riskuj": "🏆 AI Quiz Show", "pas": "📦 Sorting belt"};
+  var AGES = [{"id": "a1", "t": "Grades 1–2", "s": "ages 6–8"}, {"id": "a2", "t": "Grades 3–4", "s": "ages 8–10"}, {"id": "a3", "t": "Grades 5–7", "s": "ages 10–13"}, {"id": "a4", "t": "Grades 8–12", "s": "ages 13+"}];
+  var L = {
+ "a1": [
+  {
+   "h": "How Ludko learns",
+   "pdf": "how-ludko-learns",
+   "min": 45,
+   "goal": "Students understand that AI learns from examples. And when the examples are bad, it learns the wrong thing.",
+   "plan": [
+    [
+     "5 min",
+     "Warm-up: the teacher shows pictures (a toy, a robot vacuum, a phone, a ball). The class votes: “Is there AI in it or not?”"
+    ],
+    [
+     "15 min",
+     "Unplugged: the class is the “AI”. The teacher shows 6 fruit and vegetable cards and says where each belongs. Then shows new ones and the class guesses by color, shape and sweetness."
+    ],
+    [
+     "15 min",
+     "Teach Ludko on the board: the teacher drags the cards as the class votes. Second round: we teach Ludko wrong on purpose and see what happens."
+    ],
+    [
+     "10 min",
+     "Discussion (questions below) and a drawing: “What would I teach Ludko?”"
+    ]
+   ],
+   "q": "Why did Ludko get it wrong? If we only showed him red apples, would he recognize a green one? Who teaches real AI?",
+   "games": [
+    "nauc"
+   ]
+  },
+  {
+   "h": "What’s private",
+   "pdf": "what-is-private",
+   "min": 30,
+   "goal": "Students can tell what they can say to an app or a chat and what they keep to themselves.",
+   "plan": [
+    [
+     "5 min",
+     "Talk: who do you share secrets with? Who is a “trusted adult”?"
+    ],
+    [
+     "15 min",
+     "What to tell AI? on the board. For each card, the class shows thumbs up (I can say it) or thumbs down (I’ll keep it)."
+    ],
+    [
+     "10 min",
+     "Traffic light: each student draws one thing in the green box (I can say it) and one in the red box (never)."
+    ]
+   ],
+   "q": "Why wouldn’t you tell a stranger where you live? Who do you tell when something is bothering you?",
+   "games": [
+    "prezradit"
+   ]
+  }
+ ],
+ "a2": [
+  {
+   "h": "AI guesses words",
+   "pdf": "ai-guesses-words",
+   "min": 45,
+   "goal": "Students understand that a language model guesses the most likely next word. That’s why it sounds sure even when it’s wrong.",
+   "plan": [
+    [
+     "10 min",
+     "Unplugged: the teacher says the start of a sentence (“For breakfast I had toast with…”). Students write one word on a slip of paper. Tally the votes on the board and you get a “bar chart”, just like in AI."
+    ],
+    [
+     "15 min",
+     "Finish it like AI on the board, the class votes."
+    ],
+    [
+     "10 min",
+     "The last round, “My grandma’s name is…”: why can’t AI know that? What is a hallucination?"
+    ],
+    [
+     "10 min",
+     "Talk and write down: “AI guesses, it doesn’t know. I check important things.”"
+    ]
+   ],
+   "q": "When AI doesn’t know something, what does it do? How do you find out if it’s right?",
+   "games": [
+    "slovo",
+    "pexeso"
+   ]
+  },
+  {
+   "h": "Robot or human?",
+   "pdf": "robot-or-human",
+   "min": 45,
+   "goal": "Students find out that AI texts are hard to spot and that it matters to know where a text comes from.",
+   "plan": [
+    [
+     "10 min",
+     "Each student writes 2 sentences about their weekend. The teacher prepares 3 to 4 short AI texts on the same topic in advance."
+    ],
+    [
+     "15 min",
+     "The teacher mixes the texts and reads them. The class guesses: human or AI? How can you tell?"
+    ],
+    [
+     "10 min",
+     "Robot or human? on the board."
+    ],
+    [
+     "10 min",
+     "Talk: signs of an AI text (lists, generic wording, no personal experience) and why they aren’t proof."
+    ]
+   ],
+   "q": "Is it OK if AI helps with homework? When is it fine, and when would it be cheating?",
+   "games": [
+    "robot"
+   ]
+  },
+  {
+   "h": "Review: AI Quiz Show",
+   "pdf": "review-ai-quiz-show",
+   "min": 30,
+   "goal": "A playful review of the whole topic in teams.",
+   "plan": [
+    [
+     "5 min",
+     "Split the class into 2 to 4 teams. Each team picks a captain."
+    ],
+    [
+     "20 min",
+     "AI Quiz Show on the board: the team whose turn it is picks a category and points, talks it over, and the captain gives the answer."
+    ],
+    [
+     "5 min",
+     "Which question was the hardest? Let the winning team explain it to the others."
+    ]
+   ],
+   "q": "Which 400-point question would you add to the game?",
+   "games": [
+    "riskuj",
+    "pexeso"
+   ]
+  }
+ ],
+ "a3": [
+  {
+   "h": "Check it!",
+   "pdf": "check-it",
+   "min": 45,
+   "goal": "Students learn 3 steps for checking facts and find out that AI can be wrong even about simple facts.",
+   "plan": [
+    [
+     "5 min",
+     "Question: “When did you last believe something that wasn’t true?”"
+    ],
+    [
+     "15 min",
+     "Did AI make it up? (calm mode) in pairs or on the board."
+    ],
+    [
+     "15 min",
+     "3 steps for checking: 1. Who says so? 2. What do other reliable sources say? 3. Since when is it true? Pairs check one fact from the game in an encyclopedia or on an official website."
+    ],
+    [
+     "10 min",
+     "Talk: why does AI sound sure even when it’s wrong?"
+    ]
+   ],
+   "q": "Which sources do you trust, and why? What do you do when two sources disagree?",
+   "games": [
+    "halu",
+    "slovo"
+   ]
+  },
+  {
+   "h": "Spot a picture made by AI",
+   "pdf": "spot-an-ai-picture",
+   "min": 45,
+   "goal": "Students notice typical mistakes in AI pictures and understand that the safest way is to check the source.",
+   "plan": [
+    [
+     "5 min",
+     "Question: “Have you seen a picture and weren’t sure if it was real?”"
+    ],
+    [
+     "20 min",
+     "Spot the AI mistakes on the board: students come up and tap the mistakes, the others help."
+    ],
+    [
+     "15 min",
+     "Talk: why does AI draw hands and letters badly? Newer AI makes fewer of these mistakes. So how do we spot a fake picture? (Who posted it? Do other sources report it?)"
+    ],
+    [
+     "5 min",
+     "Summary: mistakes in a picture help, but only checking the source gives certainty."
+    ]
+   ],
+   "q": "If a picture had no mistakes at all, how would you find out whether it’s real?",
+   "games": [
+    "chyby"
+   ]
+  },
+  {
+   "h": "Climb the Matterhorn",
+   "pdf": "climb-the-matterhorn",
+   "min": 45,
+   "goal": "A competitive review: privacy, hallucinations, deepfakes, using AI fairly.",
+   "plan": [
+    [
+     "5 min",
+     "Teams of 4 to 5 students, each team has A/B/C cards."
+    ],
+    [
+     "30 min",
+     "Ludko to the top, Matterhorn route. Teams take turns and show their answer with a card. Points for every ledge without a slip."
+    ],
+    [
+     "10 min",
+     "Each team makes up one question of its own for the next ledge."
+    ]
+   ],
+   "q": "Which answer surprised you? Which question would be good for parents?",
+   "games": [
+    "vrchol"
+   ]
+  }
+ ],
+ "a4": [
+  {
+   "h": "Deepfakes and scams",
+   "pdf": "deepfakes-and-scams",
+   "min": 45,
+   "goal": "Students learn the signs of AI scams (a fake voice, a video, a “new number”) and agree on rules for checking.",
+   "plan": [
+    [
+     "5 min",
+     "Question: “Have you ever seen a video that looked real but wasn’t?”"
+    ],
+    [
+     "15 min",
+     "Spot the scam (timed) in pairs, then go through the hardest situations together."
+    ],
+    [
+     "15 min",
+     "Talk about a family “safe word” and why grandparents are most at risk. Homework: explain one situation from the game at home."
+    ],
+    [
+     "10 min",
+     "Cyberbullying and deepfakes: what to do when someone makes a fake video of a classmate? (report it, don’t share it, tell an adult)"
+    ]
+   ],
+   "q": "Why do scammers push for speed and secrecy? Who at home would you explain this to first?",
+   "games": [
+    "podvod",
+    "pas",
+    "chyby"
+   ]
+  },
+  {
+   "h": "AI and homework: what’s fair?",
+   "pdf": "ai-and-homework",
+   "min": 45,
+   "goal": "The class creates its own agreement on using AI.",
+   "plan": [
+    [
+     "10 min",
+     "Four corners: the teacher reads situations (AI explained the material to me / AI wrote my whole essay / AI fixed my grammar / AI made up the sources). Students go to the corner “fair”, “unfair” or “it depends”."
+    ],
+    [
+     "15 min",
+     "Group discussion: where is the line? What do I learn from it and what not?"
+    ],
+    [
+     "15 min",
+     "Edit the Classroom AI agreement (below) together and sign it."
+    ],
+    [
+     "5 min",
+     "Robot or human? to finish."
+    ]
+   ],
+   "q": "When AI writes for me, who is doing the learning? What will I know a year from now?",
+   "games": [
+    "robot"
+   ]
+  },
+  {
+   "h": "How AI actually works",
+   "pdf": "how-ai-actually-works",
+   "min": 45,
+   "goal": "Students connect learning from examples, predicting words and bias in data.",
+   "plan": [
+    [
+     "10 min",
+     "Teach Ludko: teach him wrong on purpose. What does that tell us about data?"
+    ],
+    [
+     "15 min",
+     "Finish it like AI: why doesn’t AI always answer the same way? What is probability?"
+    ],
+    [
+     "15 min",
+     "Discussion about bias: if AI learned from texts where the doctor was always a man, what will it write? How can we fix that?"
+    ],
+    [
+     "5 min",
+     "Summary: data → learning → prediction → mistakes."
+    ]
+   ],
+   "q": "Who is responsible for an AI mistake: the company, the user or the data?",
+   "games": [
+    "nauc",
+    "slovo"
+   ]
+  }
+ ]
+};
+  var ages = document.getElementById('ages'), box = document.getElementById('lessons');
+  ages.innerHTML = AGES.map(function (a, i) { return '<button type="button" role="tab" class="age" id="tab-' + a.id + '" aria-selected="' + (i === 0) + '" data-a="' + a.id + '">' + a.t + '<small>' + a.s + '</small></button>'; }).join('');
+  function show(id) {
+    Array.prototype.forEach.call(ages.querySelectorAll('.age'), function (b) { b.setAttribute('aria-selected', b.getAttribute('data-a') === id); });
+    box.innerHTML = L[id].map(function (x, i) {
+      return '<article class="card lesson" style="animation-delay:' + (i * 0.08) + 's"><div class="top"><span class="tag">' + x.min + ' MIN</span>' + (id === 'a1' || id === 'a2' ? '<span class="tag lt">TEACHER-LED</span>' : '<span class="tag lt">PAIRS / TEAMS</span>') + '</div>' +
+        '<h3>' + esc(x.h) + '</h3><div class="goal">🎯 ' + esc(x.goal) + '</div>' +
+        '<div class="games">' + x.games.map(function (g) { return '<a class="btn sm yel" href="games.html#' + g + '">' + G[g] + ' →</a>'; }).join('') + '</div>' +
+        '<a class="btn sm" href="assets/schools/' + x.pdf + '.pdf" download style="align-self:flex-start">📄 Download the lesson (PDF)</a>' +
+        '<details><summary>Lesson plan</summary><ul class="plan" style="margin-top:.7rem">' + x.plan.map(function (p) { return '<li><span class="m">' + p[0] + '</span><span>' + esc(p[1]) + '</span></li>'; }).join('') + '</ul></details>' +
+        '<div class="q">💬 <b>To talk about:</b> ' + esc(x.q) + '</div></article>';
+    }).join('');
+    try { history.replaceState(null, '', '#' + id); } catch (e) {}
+  }
+  ages.addEventListener('click', function (e) { var b = e.target.closest('.age'); if (b) show(b.getAttribute('data-a')); });
+  ages.addEventListener('keydown', function (e) {
+    if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+    var bs = Array.prototype.slice.call(ages.querySelectorAll('.age')), i = bs.indexOf(document.activeElement); if (i < 0) return;
+    var n = bs[(i + (e.key === 'ArrowRight' ? 1 : bs.length - 1)) % bs.length]; n.focus(); show(n.getAttribute('data-a'));
+  });
+  var h = (location.hash || '').replace('#', '');
+  show(L[h] ? h : 'a1');
+  if (L[h]) setTimeout(function () { document.getElementById('lessons-sec').scrollIntoView(); }, 50);
+})();
+</script>
+</body>
+</html>

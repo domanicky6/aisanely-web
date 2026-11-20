@@ -1,0 +1,68 @@
+{
+  "_info": "Content of aisanely.com. A scheduled task updates it after posts are approved.",
+  "updated": "2026-11-20",
+  "triad": {
+    "date": "24 Nov 2026",
+    "posts": [
+      {
+        "color": "#FF5F57",
+        "tag": "NEWS",
+        "title": "Claude in Copilot switches on for EU companies",
+        "body": "From 9 December, Microsoft turns on Anthropic's Claude models in Microsoft 365 Copilot for EU and EFTA organizations that haven't opted out.",
+        "prompt": "",
+        "meta": "Microsoft 365 Message Center · 10 Nov 2026",
+        "link": "https://www.instagram.com/aisanely/"
+      },
+      {
+        "color": "#28C840",
+        "tag": "AI TIP #1",
+        "title": "Ask AI to pick your idea apart",
+        "body": "AI tends to agree with you. Asking for criticism shows you the weak spots before you hit them.",
+        "prompt": "Here is my plan: [plan]. Be critical. Where could I be wrong, and what have I forgotten?",
+        "meta": "Ludko's tip",
+        "link": "https://www.instagram.com/aisanely/"
+      },
+      {
+        "color": "#FEBC2E",
+        "tag": "TOOL · 1 MINUTE",
+        "title": "Perplexity: AI search that shows sources",
+        "body": "Ask a normal question. Each sentence in the answer has a small number. Click it and you see where the information came from.",
+        "prompt": "",
+        "meta": "perplexity.ai · verified 19 Nov 2026",
+        "link": "https://www.instagram.com/aisanely/"
+      }
+    ]
+  },
+  "tyzden": {
+    "range": "",
+    "verified": "",
+    "items": []
+  },
+  "quiz": [
+    {
+      "q": "When you delete a chat, ChatGPT also forgets everything it remembered from it.",
+      "fakt": false,
+      "why": "A saved memory stays. You have to delete it in Settings → Personalization → Memory too.",
+      "src": "help.openai.com · verified 13 Nov 2026"
+    },
+    {
+      "q": "Your ChatGPT conversations can be used to improve the models, but you can turn that off.",
+      "fakt": true,
+      "why": "In Settings → Data controls you can turn off \"Improve the model for everyone\".",
+      "src": "help.openai.com"
+    },
+    {
+      "q": "When AI sounds confident, the answer must be true.",
+      "fakt": false,
+      "why": "Language models can be wrong even when they sound convincing. Always check important information.",
+      "src": "the notice under the ChatGPT chat box"
+    },
+    {
+      "q": "Gemini is an AI assistant made by Google.",
+      "fakt": true,
+      "why": "Gemini is developed by Google. OpenAI makes ChatGPT and Microsoft makes Copilot.",
+      "src": "gemini.google.com"
+    }
+  ],
+  "opravy": []
+}

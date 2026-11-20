@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI and kids: a guide for parents · AI Sanely</title>
+<meta name="description" content="How to talk with kids about AI at every age, what to allow, what to watch out for, a family AI agreement to print and games to play together.">
+<meta property="og:title" content="AI and kids: calmly and together">
+<meta property="og:description" content="How to talk about AI at every age, what to allow, a family agreement to print and games for kids.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://aisanely.com/parents.html">
+<meta property="og:image" content="https://aisanely.com/assets/og/parents.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="AI and kids: a guide for parents. Mascot Ludko.">
+<meta property="og:site_name" content="AI Sanely">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#17153B">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="manifest" href="assets/site.webmanifest">
+<link rel="stylesheet" href="assets/fonts/fonts.css">
+<link rel="stylesheet" href="assets/ui.css">
+<style>
+.beta-bar{background:#C62828;color:#FFFFFF;text-align:center;font:600 13px/1.4 Montserrat,system-ui,sans-serif;padding:6px 16px}
+.btns{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:.4rem}
+.ages{display:grid;gap:1.2rem;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr))}
+.agec{display:flex;flex-direction:column;gap:.6rem;border-radius:22px;border:3px solid var(--ink);padding:1.3rem;background:#fff}
+.agec .yr{align-self:flex-start;font-family:"JetBrains Mono",monospace;font-weight:700;font-size:.85rem;background:var(--ink);color:#fff;border-radius:999px;padding:.25rem .75rem}
+.agec b{font-size:1.15rem;line-height:1.3}
+.agec p{margin:0;line-height:1.55;color:var(--ink2)}
+.agec .say{background:var(--yel2);border:2px dashed var(--ink);border-radius:14px;padding:.6rem .8rem;line-height:1.5;font-size:.97rem}
+.yesno{display:grid;gap:1.2rem;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr))}
+.yesno .col{border:3px solid var(--ink);border-radius:22px;padding:1.4rem 1.5rem}
+.yesno h3{margin:0 0 .8rem;font-size:1.3rem}
+.yesno ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:.65rem}
+.yesno li{display:grid;grid-template-columns:1.8rem 1fr;gap:.4rem;line-height:1.5}
+.watch{display:grid;gap:1.2rem;grid-template-columns:repeat(auto-fit,minmax(min(100%,195px),1fr))}
+.watch .card{display:flex;flex-direction:column;gap:.5rem}
+.watch .e{font-size:2.1rem;line-height:1}
+.watch b{font-size:1.15rem}
+.watch p{margin:0;line-height:1.55;color:var(--ink2)}
+.deal{background:#fff;border:3px solid var(--ink);border-radius:24px;padding:1.8rem;box-shadow:7px 7px 0 var(--ink);max-width:760px}
+.deal h3{margin:0 0 .3rem;font-size:1.6rem}
+.deal ol{margin:.8rem 0;padding-left:1.4rem;display:flex;flex-direction:column;gap:.55rem;line-height:1.55;font-size:1.05rem}
+.deal .sign{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:1.8rem}
+.deal .sign span{border-top:2px solid var(--ink);padding-top:.3rem;font-size:.85rem;color:var(--mut)}
+.games{display:flex;flex-direction:column;gap:1.4rem}
+.grow h3{margin:0 0 .7rem;font-size:1.2rem}
+.glist{display:grid;gap:.9rem;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr))}
+.glist a{display:grid;grid-template-columns:auto 1fr;gap:.2rem .8rem;align-items:center;text-decoration:none;background:#fff;border:3px solid var(--ink);border-radius:18px;padding:.9rem 1rem;box-shadow:4px 4px 0 var(--ink);transition:transform .15s,box-shadow .15s}
+.glist a:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--ink)}
+.glist .e{grid-row:span 2;font-size:1.9rem;width:3rem;height:3rem;border-radius:14px;border:2px solid var(--ink);display:flex;align-items:center;justify-content:center}
+.glist b{font-size:1.02rem}
+.glist small{color:var(--ink2);line-height:1.4}
+.box{border:3px solid var(--ink);border-radius:24px;padding:1.5rem 1.6rem;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1rem;background:#fff}
+.box p{margin:.3rem 0 0;color:var(--ink2);line-height:1.5}
+@media print{
+  .beta-bar,.top,.foot,main > section:not(#dohoda),#dohoda .wrap > :not(.deal){display:none!important}
+  #dohoda{background:#fff;padding:0}
+  #dohoda .deal{box-shadow:none;border-width:2px;max-width:none}
+}
+</style>
+<script src="assets/stats.js"></script>
+</head>
+<body>
+<div class="beta-bar" role="note">This site is in beta. We are still working on it.</div>
+<header id="site-header"></header>
+<main id="main">
+
+<section class="hero">
+  <div class="wrap">
+    <div class="txt">
+      <span class="kicker">For parents</span>
+      <h1>AI and kids. Calmly and&nbsp;together.</h1>
+      <p class="lead">Kids meet AI on their phones, at school and in games. There’s no need to panic or ban everything. Talk with them and agree on a few rules.</p>
+      <div class="btns">
+        <a class="btn yel" href="#age">How to talk about AI at every age →</a>
+        <a class="btn" href="#agreement">Family AI agreement</a>
+      </div>
+    </div>
+    <div class="art bob" data-ludko="hi" data-w="230"></div>
+  </div>
+</section>
+
+<section class="sec" id="age" style="scroll-margin-top:4rem">
+  <div class="wrap">
+    <span class="kicker">Talk by age</span>
+    <h2>How to talk with kids about AI</h2>
+    <p class="lead">You don’t have to be an expert. What works best is playing a game together and asking one question afterwards. Here’s what kids understand at each age.</p>
+    <div class="ages">
+      <div class="agec reveal" style="background:#C9F2D2"><span class="yr">Ages 6–8</span><b>AI learns from examples</b>
+        <p>Compare it with how your child learns. Good examples, good learning. Bad examples, and AI learns the wrong thing.</p>
+        <p>Add Ludko’s rule: "Only tell AI what you would tell a stranger on the street."</p>
+        <div class="say">💬 What would Ludko think of a green apple if he had only ever seen red ones?</div></div>
+      <div class="agec reveal" style="background:#EEECFF"><span class="yr">Ages 8–10</span><b>AI guesses the next word</b>
+        <p>When AI writes, it keeps guessing which word fits best. Usually it gets it right. But even when it doesn’t know something, it still writes something.</p>
+        <p>That’s why it sounds sure even when it’s wrong. We check the important things.</p>
+        <div class="say">💬 When AI tells you something, how do you find out if it’s true?</div></div>
+      <div class="agec reveal" style="background:#FFF3CF"><span class="yr">Ages 10–13</span><b>Check it</b>
+        <p>Teach your child three questions. Who says so? What do other reliable sources say? Since when is it true?</p>
+        <p>With pictures, mistakes like odd fingers help. But only knowing where a picture comes from gives certainty.</p>
+        <div class="say">💬 Which source do you trust, and why?</div></div>
+      <div class="agec reveal" style="background:#FFE3C7"><span class="yr">Ages 13+</span><b>Deepfakes, scams and fairness</b>
+        <p>AI can copy a voice and a face. Scammers push on time, money and secrecy.</p>
+        <p>For homework, talk about where the line is. What does your child learn if AI writes the assignment?</p>
+        <div class="say">💬 When AI writes for me, who is doing the learning?</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec tint">
+  <div class="wrap">
+    <span class="kicker">What to allow</span>
+    <h2>Yes, or better not?</h2>
+    <p class="lead">AI doesn’t have to be banned at home. It depends on what your child uses it for. Younger kids should try it with you.</p>
+    <div class="yesno">
+      <div class="col" style="background:#C9F2D2"><h3>👍 Sure, go ahead</h3><ul>
+        <li><span aria-hidden="true">❓</span><span>Asking about things they’re curious about. For example why the sky is blue.</span></li>
+        <li><span aria-hidden="true">✏️</span><span>Making up poems and stories with AI.</span></li>
+        <li><span aria-hidden="true">📘</span><span>Getting an explanation of something they didn’t understand at school.</span></li>
+        <li><span aria-hidden="true">👨‍👧</span><span>Trying AI together with you and talking about it afterwards.</span></li>
+      </ul></div>
+      <div class="col" style="background:#FFD6D3"><h3>🤐 Better not</h3><ul>
+        <li><span aria-hidden="true">🏠</span><span>Typing their full name, school, address or family phone numbers into AI.</span></li>
+        <li><span aria-hidden="true">🔑</span><span>Giving away passwords. A password belongs to nobody else, AI included.</span></li>
+        <li><span aria-hidden="true">📷</span><span>Uploading photos of friends without asking them.</span></li>
+        <li><span aria-hidden="true">📝</span><span>Letting AI do the whole assignment for them.</span></li>
+      </ul></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <span class="kicker">What to watch out for</span>
+    <h2>Five things worth talking about</h2>
+    <div class="watch" style="margin-top:1.4rem">
+      <div class="card reveal"><span class="e" aria-hidden="true">🔒</span><b>Privacy</b><p>A name and a school are enough to find out where a child can be found. Where you live, or that you’re away on vacation, doesn’t belong in any chat.</p></div>
+      <div class="card reveal"><span class="e" aria-hidden="true">📷</span><b>Photos</b><p>A photo belongs to the person in it. Without their permission your child doesn’t upload it anywhere. That goes for AI apps too.</p></div>
+      <div class="card reveal"><span class="e" aria-hidden="true">📝</span><b>Homework</b><p>AI can explain the material. But if it writes the whole essay, your child learns nothing. If AI helped, they should say so at school.</p></div>
+      <div class="card reveal"><span class="e" aria-hidden="true">🎭</span><b>Deepfakes</b><p>Someone can make a fake video of a classmate too. Your child shouldn’t share it. They should report it and tell you or a teacher.</p></div>
+      <div class="card reveal"><span class="e" aria-hidden="true">🤖</span><b>A chatbot as a "friend"</b><p>A chatbot is always nice and always has time. Remind your child that it’s a program and doesn’t think like a person. If something is bothering them, they should come to you.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec lil" id="agreement" style="scroll-margin-top:4rem">
+  <div class="wrap">
+    <span class="kicker">To print</span>
+    <h2>Family AI agreement</h2>
+    <p class="lead">Read it together and change the points as you like. What matters is that they’re yours. Then sign it and put it on the fridge.</p>
+    <div class="deal">
+      <span class="kicker" style="font-size:.75rem">AI Sanely · family agreement</span>
+      <h3>How we use AI at home</h3>
+      <ol>
+        <li>AI is our <b>helper</b>. But we do our own thinking.</li>
+        <li>We <b>don’t type</b> names, addresses, schools, passwords or phone numbers into AI.</li>
+        <li>We <b>don’t upload</b> photos of other people without their permission.</li>
+        <li>We <b>check</b> important things in another source, or we ask.</li>
+        <li>When AI helps us with homework, <b>we say so</b>.</li>
+        <li>When something scares or confuses us, <b>we talk about it at home</b>. Nobody will be angry.</li>
+        <li>We have a <b>family password</b>. If someone calls for help and wants money, we ask for it.</li>
+      </ol>
+      <div class="sign"><span>Kids’ signatures</span><span>Parents’ signatures and date</span></div>
+    </div>
+    <div style="margin-top:1.4rem;display:flex;gap:.8rem;flex-wrap:wrap"><button type="button" class="btn yel" onclick="window.print()">🖨️ Print the agreement</button></div>
+  </div>
+</section>
+
+<section class="sec" id="games-by-age" style="scroll-margin-top:4rem">
+  <div class="wrap">
+    <span class="kicker">Games by age</span>
+    <h2>Play together</h2>
+    <p class="lead">The games take a few minutes and nothing is sent anywhere. Each ends with a question to talk about. That question is the most important part.</p>
+    <div class="games">
+      <div class="grow"><h3>From age 6</h3><div class="glist">
+        <a href="games.html#nauc"><span class="e" style="background:#C9F2D2" aria-hidden="true">🍎</span><b>Teach Ludko</b><small>How AI learns from examples.</small></a>
+        <a href="games.html#prezradit"><span class="e" style="background:#FFF3CF" aria-hidden="true">🤫</span><b>What to tell AI?</b><small>What’s private and doesn’t belong in a chat.</small></a>
+        <a href="games.html#vrchol"><span class="e" style="background:#C9F2D2" aria-hidden="true">🧗</span><b>Ludko to the top</b><small>The Hill behind the school route is for ages 6 and up.</small></a>
+      </div></div>
+      <div class="grow"><h3>From ages 7–8</h3><div class="glist">
+        <a href="games.html#chyby"><span class="e" style="background:#FFE3C7" aria-hidden="true">🔍</span><b>Spot the AI mistakes</b><small>How to recognize a picture made by AI.</small></a>
+        <a href="games.html#pexeso"><span class="e" style="background:#EEECFF" aria-hidden="true">🃏</span><b>AI Memory</b><small>Words like prompt, deepfake and hallucination.</small></a>
+        <a href="games.html#slovo"><span class="e" style="background:#EEECFF" aria-hidden="true">💬</span><b>Finish it like AI</b><small>Why AI sounds smart even when it’s wrong.</small></a>
+        <a href="games.html#robot"><span class="e" style="background:#FFE3C7" aria-hidden="true">🤖</span><b>Robot or human?</b><small>Can you tell who wrote the text?</small></a>
+        <a href="games.html#riskuj"><span class="e" style="background:#FFF3CF" aria-hidden="true">🏆</span><b>AI Quiz Show</b><small>A contest for the whole family, up to 4 teams.</small></a>
+      </div></div>
+      <div class="grow"><h3>From ages 9–10</h3><div class="glist">
+        <a href="games.html#pas"><span class="e" style="background:#C9F2D2" aria-hidden="true">📦</span><b>Sorting belt</b><small>Is the message fine, or a scam?</small></a>
+        <a href="games.html#halu"><span class="e" style="background:#FFD6D3" aria-hidden="true">🔍</span><b>Did AI make it up?</b><small>Find the sentence that isn’t true.</small></a>
+        <a href="games.html#vrchol"><span class="e" style="background:#C9F2D2" aria-hidden="true">🧗</span><b>The Matterhorn</b><small>The harder route in Ludko to the top.</small></a>
+      </div></div>
+      <div class="grow"><h3>For the whole family</h3><div class="glist">
+        <a href="games.html#podvod"><span class="e" style="background:#FFD6D3" aria-hidden="true">🚨</span><b>Spot the scam</b><small>Fake voices, videos and texts. Play it with the grandparents too.</small></a>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec tint">
+  <div class="wrap" style="display:flex;flex-direction:column;gap:1.2rem">
+    <div class="box">
+      <div style="flex:1 1 300px"><b style="font-size:1.2rem">The parents’ guide as a PDF</b><p>Comment <b class="mono">PARENTS</b> on Instagram and we’ll send it to your DMs.</p></div>
+      <a class="btn dark" href="https://www.instagram.com/aisanely/">To Instagram</a>
+    </div>
+    <div class="box">
+      <div style="flex:1 1 300px"><b style="font-size:1.2rem">Grandparents in the family too?</b><p>Print them the anti-scam cheat sheet. One page, large print.</p></div>
+      <a class="btn yel" href="seniors.html">Cheat sheet for seniors →</a>
+    </div>
+  </div>
+</section>
+
+</main>
+<footer id="site-footer"></footer>
+<script src="assets/ui.js"></script>
+</body>
+</html>

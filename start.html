@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Start here: AI, calmly and step by step · AI Sanely</title>
+<meta name="description" content="Mixed feelings about AI? Start calmly: 7 small steps, 5 minutes a day, first questions to copy, safety rules and a jargon-free glossary.">
+<meta property="og:title" content="Start here: AI, calmly and step by step">
+<meta property="og:description" content="You don’t need to know everything. 7 small steps, first prompts and a jargon-free glossary.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://aisanely.com/start.html">
+<meta property="og:image" content="https://aisanely.com/assets/og/start.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Start here: 7 small steps and a jargon-free glossary. Mascot Ludko.">
+<meta property="og:site_name" content="AI Sanely">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#17153B">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="manifest" href="assets/site.webmanifest">
+<link rel="stylesheet" href="assets/fonts/fonts.css">
+<link rel="stylesheet" href="assets/ui.css">
+<style>
+.feel{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:.9rem}
+.fbtn{display:flex;align-items:center;gap:.8rem;text-align:left;min-height:4.6rem;padding:.8rem 1.1rem;border:3px solid var(--ink);border-radius:20px;background:#fff;font-weight:800;font-size:1.08rem;cursor:pointer;box-shadow:5px 5px 0 var(--ink);transition:transform .15s,box-shadow .15s,background .2s}
+.fbtn:hover{transform:translate(-2px,-2px);box-shadow:7px 7px 0 var(--ink)}
+.fbtn .e{font-size:2rem}
+.fbtn[aria-pressed="true"]{background:var(--yel)}
+.fans{margin-top:1.4rem;background:#fff;border:3px solid var(--ink);border-radius:24px;padding:1.4rem 1.5rem;display:flex;gap:1.2rem;align-items:flex-start;animation:slideUp .45s ease both}
+.fans .lk{flex:none;width:90px}
+.fans h3{margin:0 0 .4rem;font-size:1.35rem}
+.fans p{margin:0 0 .8rem;font-size:1.08rem;line-height:1.6;color:var(--ink2)}
+@media (max-width:600px){.fans{flex-direction:column}.fans .lk{width:70px}}
+.steps{display:flex;flex-direction:column;gap:1rem}
+.step{display:grid;grid-template-columns:auto 1fr;gap:1rem;align-items:start;background:#fff;border:3px solid var(--ink);border-radius:22px;padding:1.1rem 1.2rem;box-shadow:5px 5px 0 var(--ink);transition:background .3s}
+.step.done{background:var(--grn2)}
+.chk{width:3rem;height:3rem;border-radius:14px;border:3px solid var(--ink);background:#fff;font-size:1.4rem;font-weight:900;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:transform .2s cubic-bezier(.3,1.6,.5,1)}
+.chk[aria-checked="true"]{background:var(--grn);transform:rotate(-6deg) scale(1.05)}
+.step h3{margin:.2rem 0 .3rem;font-size:1.2rem}
+.step .day{font-family:"JetBrains Mono",monospace;font-size:.75rem;font-weight:700;color:var(--mut);letter-spacing:.06em}
+.step p{margin:0 0 .6rem;line-height:1.55;color:var(--ink2)}
+.prompt{position:relative;background:var(--bg);border:2px dashed var(--ink);border-radius:14px;padding:.8rem 1rem;font-weight:600;line-height:1.5;margin:.3rem 0 .4rem}
+.prompt .btn{margin-top:.6rem}
+.pbar{position:sticky;top:4.6rem;z-index:5;background:#fff;border:3px solid var(--ink);border-radius:999px;padding:.4rem .5rem .4rem 1rem;display:flex;align-items:center;gap:.8rem;margin-bottom:1.2rem;box-shadow:4px 4px 0 var(--ink)}
+.pbar .tr{flex:1;height:.9rem;border:2px solid var(--ink);border-radius:999px;overflow:hidden;background:var(--bg)}
+.pbar .tr i{display:block;height:100%;width:0;background:var(--grn);transition:width .6s cubic-bezier(.3,1.4,.5,1)}
+.pbar b{white-space:nowrap}
+.yay{display:none;margin-top:1rem;background:var(--yel2);border:3px solid var(--ink);border-radius:20px;padding:1.1rem 1.3rem;font-weight:700;line-height:1.55;animation:popIn .5s both}
+.yay.on{display:block}
+.asst{display:flex;flex-direction:column;gap:.5rem}
+.asst .h{display:flex;align-items:center;gap:.6rem}
+.asst .h .dot{width:2.6rem;height:2.6rem;border-radius:12px;border:3px solid var(--ink);display:flex;align-items:center;justify-content:center;font-weight:900}
+.asst p{margin:0;color:var(--ink2);line-height:1.5}
+.rules{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr))}
+.rule{border-radius:20px;padding:1.2rem;border:3px solid var(--ink);display:flex;flex-direction:column;gap:.4rem}
+.rule .n{font-size:2rem}
+.rule b{font-size:1.1rem}
+.rule span{line-height:1.5}
+details.term{background:#fff;border:3px solid var(--ink);border-radius:16px;padding:0;margin-bottom:.7rem;overflow:hidden}
+details.term summary{cursor:pointer;padding:1rem 1.2rem;font-weight:800;font-size:1.08rem;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:1rem}
+details.term summary::-webkit-details-marker{display:none}
+details.term summary:after{content:"+";font-size:1.5rem;font-weight:900;transition:transform .2s}
+details.term[open] summary:after{transform:rotate(45deg)}
+details.term div{padding:0 1.2rem 1.1rem;line-height:1.6;color:var(--ink2)}
+.stat{background:#fff;border:3px solid var(--ink);border-radius:22px;padding:1.3rem;display:flex;flex-direction:column;gap:.6rem;box-shadow:5px 5px 0 var(--ink)}
+.stat b.big{font-size:1.5rem;line-height:1.2}
+.split{display:grid;gap:2rem;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);align-items:start}
+@media (max-width:900px){.split{grid-template-columns:1fr}}
+.next{display:flex;flex-direction:column;gap:.6rem;text-decoration:none;padding:1.4rem}
+.next .e{font-size:2.4rem}
+.next b{font-size:1.25rem}
+.next span{color:var(--ink2);line-height:1.5}
+.beta-bar{background:#C62828;color:#FFFFFF;text-align:center;font:600 13px/1.4 Montserrat,system-ui,sans-serif;padding:6px 16px}
+</style>
+<script src="assets/stats.js"></script>
+</head>
+<body>
+<div class="beta-bar" role="note">This site is in beta. We are still working on it.</div>
+<header id="site-header"></header>
+<main id="main">
+
+<section class="hero">
+  <div class="wrap">
+    <div class="txt">
+      <span class="kicker">Start here · calmly</span>
+      <h1>Mixed feelings about AI? That’s completely fine.</h1>
+      <p class="lead">You don’t need to know everything, and you don’t need to catch up by Friday. We show you what AI is, what it isn’t and how to try it safely: <b>5 minutes a day, one small step</b>.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:.8rem;margin-top:.4rem">
+        <a class="btn yel" href="#7days">First step →</a>
+        <a class="btn" href="#story">▶ 30-second story</a>
+      </div>
+    </div>
+    <div class="art bob" data-ludko="hi" data-w="250"></div>
+  </div>
+</section>
+
+<section class="sec" id="story" style="scroll-margin-top:4rem">
+  <div class="wrap split">
+    <div><div data-pribeh></div></div>
+    <div style="display:flex;flex-direction:column;gap:1.2rem">
+      <h2>Sound familiar?</h2>
+      <p style="margin:0;font-size:1.1rem;line-height:1.6;color:var(--ink2)">A new "game-changing" model every day, "last chance" courses and headlines about who AI will replace. No wonder so many people feel overwhelmed.</p>
+      <div class="stat">
+        <span class="kicker" style="font-size:.75rem">You’re not alone</span>
+        <b class="big">In most countries, more people expect AI to cut jobs than to create them.</b>
+        <span style="font-size:.88rem;color:var(--mut)">Pew Research Center survey, 37 countries, February to June 2026 (<a href="https://www.euronews.com/next/2026/09/19/fear-of-ai-job-losses-now-outweighs-hope-of-new-jobs-study-finds">Euronews, 19 Sep 2026</a>).</span>
+      </div>
+      <p style="margin:0;line-height:1.6;color:var(--ink2)">We won’t pretend nothing is happening. But panic doesn’t help. What helps is knowing what really changed and trying it yourself, calmly.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec tint">
+  <div class="wrap">
+    <span class="kicker">Let’s start with you</span>
+    <h2>How do you feel when you hear "AI"?</h2>
+    <p class="lead">Tap whatever feels closest. Ludko will answer and suggest one concrete step.</p>
+    <div class="feel" role="group" aria-label="Pick a feeling">
+      <button type="button" class="fbtn" data-feel="praca" aria-pressed="false"><span class="e" aria-hidden="true">💼</span>I’m worried about my job</button>
+      <button type="button" class="fbtn" data-feel="vela" aria-pressed="false"><span class="e" aria-hidden="true">🌊</span>It’s all too much</button>
+      <button type="button" class="fbtn" data-feel="pokazim" aria-pressed="false"><span class="e" aria-hidden="true">😬</span>I’m afraid I’ll break something</button>
+      <button type="button" class="fbtn" data-feel="nechapem" aria-pressed="false"><span class="e" aria-hidden="true">🤔</span>I have no idea what it’s about</button>
+    </div>
+    <div id="fans" aria-live="polite"></div>
+  </div>
+</section>
+
+<section class="sec" id="7days" style="scroll-margin-top:4rem">
+  <div class="wrap">
+    <span class="kicker">7 days · 5 minutes a day</span>
+    <h2>7 small steps into AI</h2>
+    <p class="lead">One step a day. Stop any time, pick it up any time. The page remembers finished steps in your browser.</p>
+    <div class="pbar" aria-live="polite"><b id="pcount">0 of 7</b><span class="tr" aria-hidden="true"><i id="pfill"></i></span></div>
+    <div class="steps" id="steps"></div>
+    <div class="yay" id="yay">🎉 <b>You’ve done all 7 steps!</b> You now use AI better than most people around you. And above all, you know when not to trust it. We’ll keep bringing you the news on <a href="https://www.instagram.com/aisanely/">Instagram @aisanely</a>.</div>
+  </div>
+</section>
+
+<section class="sec lil">
+  <div class="wrap">
+    <span class="kicker">Step 1 in more detail</span>
+    <h2>Which assistant should you pick?</h2>
+    <p class="lead">One is enough. All of these have a free version. If you can’t decide, pick the one from a company you already use (for example Google or Microsoft).</p>
+    <div class="grid">
+      <div class="card asst reveal"><div class="h"><span class="dot" style="background:#C9F2D2">G</span><b style="font-size:1.2rem">ChatGPT</b></div><p>By OpenAI. The best known, with lots of guides online. <span class="mono" style="font-size:.85rem">chatgpt.com</span></p></div>
+      <div class="card asst reveal"><div class="h"><span class="dot" style="background:#EEECFF">✦</span><b style="font-size:1.2rem">Gemini</b></div><p>By Google. Handy if you use Gmail, Android or Google Docs. <span class="mono" style="font-size:.85rem">gemini.google.com</span></p></div>
+      <div class="card asst reveal"><div class="h"><span class="dot" style="background:#FFF3CF">C</span><b style="font-size:1.2rem">Copilot</b></div><p>By Microsoft. Built into Windows and Office (Word, Outlook). <span class="mono" style="font-size:.85rem">copilot.microsoft.com</span></p></div>
+      <div class="card asst reveal"><div class="h"><span class="dot" style="background:#FFD6D3">A</span><b style="font-size:1.2rem">Claude</b></div><p>By Anthropic. Good for longer texts and explanations. <span class="mono" style="font-size:.85rem">claude.ai</span></p></div>
+    </div>
+    <p style="margin:1.4rem 0 0;font-size:.92rem;color:var(--mut)">Age limits differ. Most services are for adults, or for teens with a parent’s consent. Check the terms of the service you pick. The order is alphabetical by company. Nobody pays us to recommend anything.</p>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <span class="kicker">Stay safe</span>
+    <h2>5 rules are all you need</h2>
+    <p class="lead">You don’t need to understand the tech. These rules protect you with any AI tool.</p>
+    <div class="rules">
+      <div class="rule reveal" style="background:var(--red2)"><span class="n" aria-hidden="true">🔒</span><b>Nothing personal</b><span>Never type passwords, PINs, card numbers, your Social Security number or medical records into a chat.</span></div>
+      <div class="rule reveal" style="background:var(--yel2)"><span class="n" aria-hidden="true">🔎</span><b>Check what matters</b><span>For health, money and official matters, check the answer with an expert or on an official website.</span></div>
+      <div class="rule reveal" style="background:var(--grn2)"><span class="n" aria-hidden="true">🧠</span><b>You decide</b><span>AI suggests, you decide. You are responsible for what you send or post.</span></div>
+      <div class="rule reveal" style="background:var(--lil2)"><span class="n" aria-hidden="true">📞</span><b>Voices can lie</b><span>AI can copy a voice and a face. If someone asks for money, always call back on a number you know.</span></div>
+      <div class="rule reveal" style="background:#FFE3C7"><span class="n" aria-hidden="true">⏸️</span><b>No rush</b><span>"Last chance" and "act now" are signs of a sales pitch or a scam, not good advice.</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec tint">
+  <div class="wrap" style="max-width:860px">
+    <span class="kicker">Jargon-free glossary</span>
+    <h2>Words you’ll keep hearing</h2>
+    <p class="lead">Each in a sentence or two. Tap to open.</p>
+    <div id="terms"></div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <span class="kicker">Where next</span>
+    <h2>Pick your next step</h2>
+    <div class="grid" style="margin-top:1.4rem">
+      <a class="card lift next" href="https://www.instagram.com/aisanely/"><span class="e" aria-hidden="true">📸</span><b>News without the noise</b><span>Verified AI news with a source and a date. Follow @aisanely.</span></a>
+      <a class="card lift next" href="games.html#senior"><span class="e" aria-hidden="true">☕</span><b>Try a conversation</b><span>The game Your first chat with AI. No sign-up, large text.</span></a>
+      <a class="card lift next" href="games.html#podvod"><span class="e" aria-hidden="true">🚨</span><b>Spot a scam</b><span>Fake voices, videos and texts. A game of a few minutes that can save you money.</span></a>
+      <a class="card lift next" href="seniors.html"><span class="e" aria-hidden="true">🖨️</span><b>Anti-scam cheat sheet</b><span>One page in large print. Print it for yourself or your parents and keep it by the phone.</span></a>
+      <a class="card lift next" href="./#free"><span class="e" aria-hidden="true">📄</span><b>20 free prompts</b><span>A PDF of tried and tested questions. Comment PROMPTS on Instagram.</span></a>
+    </div>
+  </div>
+</section>
+
+</main>
+<footer id="site-footer"></footer>
+<script src="assets/ui.js"></script>
+<script src="assets/pribeh.js"></script>
+<script>
+(function () {
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+  var FEEL = {
+    praca: { t: 'Your worry makes sense. And you’re not alone.', p: 'So far AI mostly changes individual tasks at work: writing, summaries, looking things up. What helps most is finding out which tasks in your job it can handle and which it can’t. Then you decide, not the headlines.', a: '#step7', l: 'Step 7: AI in my job →' },
+    vela: { t: 'You don’t have to follow everything.', p: 'Most "game-changing" news doesn’t really affect you. Ignore headlines with MUST, SHOCKING and LAST CHANCE. A few verified stories a week are plenty. We’re happy to pick them for you.', a: 'https://www.instagram.com/aisanely/', l: 'Follow @aisanely →' },
+    pokazim: { t: 'You won’t break anything. Really.', p: 'The worst that can happen is a wrong or odd answer. You can simply ignore it and ask differently. The one thing to watch: don’t type personal data, passwords or card numbers into the chat.', a: '#step2', l: 'Step 2: Your first question →' },
+    nechapem: { t: 'Here it is in one sentence.', p: 'AI (artificial intelligence) is a computer program that learned from a huge amount of text, so it can answer questions, write and translate. But it doesn’t think like a person, and sometimes it’s wrong.', a: 'games.html#senior', l: 'Try a chat with AI →' }
+  };
+  var fans = document.getElementById('fans');
+  Array.prototype.forEach.call(document.querySelectorAll('.fbtn'), function (b) {
+    b.onclick = function () {
+      Array.prototype.forEach.call(document.querySelectorAll('.fbtn'), function (x) { x.setAttribute('aria-pressed', x === b); });
+      var f = FEEL[b.getAttribute('data-feel')];
+      fans.innerHTML = '<div class="fans"><div class="lk">' + window.ludkoSVG('hi', 90) + '</div><div><h3>' + esc(f.t) + '</h3><p>' + esc(f.p) + '</p><a class="btn dark sm" href="' + f.a + '">' + esc(f.l) + '</a></div></div>';
+    };
+  });
+
+  var STEPS = [
+    { d: 'DAY 1', h: 'Pick one assistant', p: 'Open ChatGPT, Gemini, Copilot or Claude and sign in. One is enough. The others later, or never. There’s a short comparison further down the page.', tip: 'Tip: typing is easier on a computer, but on your phone you can just talk.' },
+    { d: 'DAY 2', h: 'A first question from everyday life', p: 'Start with something simple where nothing can go wrong. Copy the question, paste it into the chat and change it to fit you.', q: 'I have potatoes, eggs and an onion at home. Suggest a simple dinner I can make in 20 minutes. Write the steps one by one.' },
+    { d: 'DAY 3', h: 'Have something explained', p: 'AI is a patient teacher. Keep asking until you get it. Feel free to say: "Explain it even more simply."', q: 'Explain what inflation is the way you would explain it to a 12-year-old. Then give me one example from the grocery store.' },
+    { d: 'DAY 4', h: 'Help with writing', p: 'Let AI write the first draft of an email or message. Then read it and edit it so it sounds like you.', q: 'Help me write a short, polite email to a colleague saying the meeting moves to Thursday at 10 am. Tone: friendly, no filler.' },
+    { d: 'DAY 5', h: 'Check the answer', p: 'Ask about something you can check (for example the opening hours of a local office). Then compare the answer with the official website. You’ll see when AI helps and when it guesses.', q: 'What sources is your answer based on? Which parts should I double-check, and where?' },
+    { d: 'DAY 6', h: 'Set up your privacy', p: 'In your assistant’s settings, look for Privacy or Data. Find out whether your chats are saved and whether they can be used to improve the model. Then set it up the way you like.', tip: 'We have a ChatGPT guide as a PDF: comment PRIVACY on Instagram.' },
+    { d: 'DAY 7', h: 'AI in my job', p: 'AI helps most with your own work. Ask it to suggest small tasks where it can save you time. And the ones where it better not.', q: 'I work as [your job]. Suggest 5 small tasks where AI can save me time. For each one, tell me what to watch out for.' }
+  ];
+  var KEY = 'aisanely-7days', done = {};
+  try { done = JSON.parse(localStorage.getItem(KEY) || '{}'); } catch (e) {}
+  var box = document.getElementById('steps');
+  box.innerHTML = STEPS.map(function (s, i) {
+    return '<div class="step reveal' + (done[i] ? ' done' : '') + '" id="step' + (i + 1) + '" style="scroll-margin-top:9rem"><button type="button" class="chk" role="checkbox" aria-checked="' + !!done[i] + '" aria-label="Done: ' + esc(s.h) + '" data-i="' + i + '">' + (done[i] ? '✓' : (i + 1)) + '</button>' +
+      '<div><span class="day">' + s.d + ' · ~5 MIN</span><h3>' + esc(s.h) + '</h3><p>' + esc(s.p) + '</p>' +
+      (s.q ? '<div class="prompt">“' + esc(s.q) + '”<br><button type="button" class="btn sm" data-copy="' + esc(s.q) + '">📋 Copy</button></div>' : '') +
+      (s.tip ? '<p style="font-size:.95rem;margin:0">' + esc(s.tip) + '</p>' : '') + '</div></div>';
+  }).join('');
+  function upd(bump) {
+    var n = Object.keys(done).filter(function (k) { return done[k]; }).length;
+    document.getElementById('pcount').textContent = n + ' of 7';
+    document.getElementById('pfill').style.width = (n / 7 * 100) + '%';
+    document.getElementById('yay').classList.toggle('on', n === 7);
+  }
+  box.addEventListener('click', function (e) {
+    var b = e.target.closest('.chk'); if (!b) return;
+    var i = +b.getAttribute('data-i'); done[i] = !done[i];
+    try { localStorage.setItem(KEY, JSON.stringify(done)); } catch (x) {}
+    b.setAttribute('aria-checked', !!done[i]); b.textContent = done[i] ? '✓' : (i + 1);
+    b.closest('.step').classList.toggle('done', !!done[i]); upd();
+  });
+  upd();
+  Array.prototype.forEach.call(box.querySelectorAll('.reveal'), function (el) { el.classList.add('in'); });
+
+  var TERMS = [
+    ['Artificial intelligence (AI)', 'Computer programs that learn from examples and can then recognize things, answer or create on their own. They are not alive and don’t think like people.'],
+    ['Chatbot / AI assistant', 'A program you type (or talk) to like a person. For example ChatGPT, Gemini, Copilot or Claude.'],
+    ['Prompt', 'Your question or instruction for AI. The clearer you say what you want (for whom, how long, what tone), the better the answer.'],
+    ['Model', 'The "brain" behind a chatbot, the trained program itself. When you hear "a new model is out", it means a new, usually more capable version.'],
+    ['Hallucination', 'When AI makes up something that isn’t true and states it with full confidence. That’s why you check important things.'],
+    ['Deepfake', 'A fake video, photo or voice made with AI. It can look like a real person who never said it.'],
+    ['Data', 'The texts, pictures and numbers AI learns from. If the data has mistakes or biases, AI can repeat them.'],
+    ['AI agent', 'AI that doesn’t just answer but also takes steps on its own. For example it searches, fills in a form or sends a message. With agents, be extra careful about what you allow.']
+  ];
+  document.getElementById('terms').innerHTML = TERMS.map(function (t) { return '<details class="term"><summary>' + esc(t[0]) + '</summary><div>' + esc(t[1]) + '</div></details>'; }).join('');
+})();
+</script>
+</body>
+</html>
